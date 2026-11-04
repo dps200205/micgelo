@@ -1,0 +1,268 @@
+{
+  "model": "jev-1.14.0",
+  "answers": {
+    "dlm__line_visible_full__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "dlm__line_visible_full__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "dlm__line_visible_full__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "dlm__dominant_form": {
+      "type": "choice",
+      "choice": "long_directional_lines",
+      "confidence": 0.71,
+      "probabilities": {
+        "small_separate_spots": 0.0,
+        "long_directional_lines": 0.78,
+        "large_areas_of_shape": 0.11,
+        "mixed_balance": 0.11
+      }
+    },
+    "dlm__levels_distinct": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "dlm__first_noticed": {
+      "type": "choice",
+      "choice": "large_concrete_pillar_on_the_left",
+      "confidence": 0.29,
+      "probabilities": {
+        "control_room_with_consoles_at_the_far_end_of_the": 0.22,
+        "tall_metal_electrical_cabinets_along_the_right": 0.08,
+        "row_of_control_consoles_on_the_back_wall": 0.08,
+        "red_stripe_painted_along_the_walls": 0.01,
+        "yellow_and_black_hazard_stripes_along_the_floor": 0.01,
+        "ceiling_edges_of_the_corridor": 0.0,
+        "large_concrete_pillar_on_the_left": 0.37,
+        "red_painted_corridor_floor": 0.22,
+        "curved_ceiling_of_the_corridor": 0.01
+      }
+    },
+    "dlm__subject_stands_out": {
+      "type": "noul",
+      "noul": 0.57
+    },
+    "dlm__points_equally_loud__warning_signs_and_painted_labels_on_the_walls": {
+      "type": "noul",
+      "noul": 0.06
+    },
+    "dlm__points_equally_loud__bright_ceiling_lights": {
+      "type": "noul",
+      "noul": 0.15
+    },
+    "dlm__points_pull_from_subject__warning_signs_and_painted_labels_on_the_walls": {
+      "type": "noul",
+      "noul": 0.29
+    },
+    "dlm__points_pull_from_subject__bright_ceiling_lights": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "dlm__line_path_continuous__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "dlm__line_path_continuous__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "dlm__line_path_continuous__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "dlm__line_leads_to_subject__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.62
+    },
+    "dlm__line_leads_to_subject__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "dlm__line_leads_to_subject__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "dlm__line_spans_far__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "dlm__line_spans_far__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.57
+    },
+    "dlm__line_spans_far__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "dlm__line_contrast__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "dlm__line_contrast__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "dlm__line_contrast__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "dlm__line_reads_as_band__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "dlm__line_reads_as_band__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.26
+    },
+    "dlm__line_reads_as_band__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "dlm__area_shape_clear__large_concrete_pillar_on_the_left": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "dlm__area_shape_clear__red_painted_corridor_floor": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "dlm__area_shape_clear__curved_ceiling_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "dlm__area_broken_up__large_concrete_pillar_on_the_left": {
+      "type": "noul",
+      "noul": 0.08
+    },
+    "dlm__area_broken_up__red_painted_corridor_floor": {
+      "type": "noul",
+      "noul": 0.13
+    },
+    "dlm__area_broken_up__curved_ceiling_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.22
+    },
+    "dlm__shapes_merge": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "dlm__distracting_gaps": {
+      "type": "noul",
+      "noul": 0.32
+    },
+    "dlm__subject_outline_readable": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "dlm__subject_outline_noisy": {
+      "type": "noul",
+      "noul": 0.08
+    },
+    "dlm__group_reads_as__tall_metal_electrical_cabinets_along_the_right": {
+      "type": "choice",
+      "choice": "one_continuous_path",
+      "confidence": 0.56,
+      "probabilities": {
+        "separate_items": 0.1,
+        "one_continuous_path": 0.71,
+        "one_filled_area": 0.19
+      }
+    },
+    "dlm__group_reads_as__row_of_control_consoles_on_the_back_wall": {
+      "type": "choice",
+      "choice": "one_continuous_path",
+      "confidence": 0.38,
+      "probabilities": {
+        "separate_items": 0.1,
+        "one_continuous_path": 0.59,
+        "one_filled_area": 0.31
+      }
+    },
+    "dlm__glow_clutter": {
+      "type": "noul",
+      "noul": 0.09
+    },
+    "dlm__highlights_compete_subject": {
+      "type": "noul",
+      "noul": 0.34
+    },
+    "dlm__lopsided": {
+      "type": "noul",
+      "noul": 0.43
+    },
+    "dlm__half_holds_eye__left": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "dlm__half_holds_eye__right": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "dlm__thumb_subject_visible": {
+      "type": "noul",
+      "noul": 0.58
+    },
+    "dlm__thumb_group_visible__tall_metal_electrical_cabinets_along_the_right": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "dlm__thumb_group_visible__row_of_control_consoles_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "present__red_stripe_painted_along_the_walls": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "present__yellow_and_black_hazard_stripes_along_the_floor": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "present__ceiling_edges_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "present__control_room_with_consoles_at_the_far_end_of_the": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "present__warning_signs_and_painted_labels_on_the_walls": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__bright_ceiling_lights": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "present__large_concrete_pillar_on_the_left": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "present__red_painted_corridor_floor": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "present__curved_ceiling_of_the_corridor": {
+      "type": "noul",
+      "noul": 0.71
+    },
+    "present__tall_metal_electrical_cabinets_along_the_right": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__row_of_control_consoles_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.95
+    }
+  },
+  "usage": {
+    "input_tokens": 11655,
+    "output_tokens": 1885
+  }
+}

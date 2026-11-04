@@ -1,0 +1,16 @@
+# 评测集登记表（整图逐条人工标注，用于校准；与知识块里的案例图不同）
+# - 每个案例一个目录 cases/<id>/，内含 image.jpg、brief.yaml、scene.json、routing.yaml
+# - labels：键为 知识块ID.条目编号，值为 合格 / 不合格 / 不适用；留空表示未标注
+# - split：tune 用于改写问题、调阈值；test 只用于最终测准确率，调参时不要看
+cases:
+  - id: C002
+    split: tune
+    labeler: null
+    labels: {}
+    note: PVP 爆破地图走廊概念图，尚未人工标注
+
+# 标注示例：
+#  - id: C003
+#    split: test
+#    labeler: 张三
+#    labels: {dlm.D04: 合格, dlm.D13: 不合格, dlm.D14: 不适用}

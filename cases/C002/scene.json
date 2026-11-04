@@ -1,0 +1,24 @@
+{
+  "subject": {"name": "the control room with consoles at the far end of the corridor", "location": "center, far end of the corridor"},
+  "repeated_groups": [
+    {"name": "the tall metal electrical cabinets along the right wall", "location": "right third, receding toward the far end", "target_read": "one_continuous_path"},
+    {"name": "the row of control consoles on the back wall", "location": "center, far end", "target_read": null}
+  ],
+  "guiding_lines": [
+    {"name": "the red stripe painted along the walls", "location": "left pillars, continuing into the corridor"},
+    {"name": "the yellow and black hazard stripes along the floor edges", "location": "floor, from the foreground toward the far end"},
+    {"name": "the ceiling edges of the corridor", "location": "top, converging toward the far end"}
+  ],
+  "large_areas": [
+    {"name": "the large concrete pillar on the left", "location": "left of center, full height"},
+    {"name": "the red painted corridor floor", "location": "bottom center"},
+    {"name": "the curved ceiling of the corridor", "location": "top center"}
+  ],
+  "dense_regions": [],
+  "point_groups": [
+    {"name": "the warning signs and painted labels on the walls", "location": "left pillar, center pillar and right cabinets"},
+    {"name": "the bright ceiling lights", "location": "top center"}
+  ],
+  "parser": "WorkBuddy（按 prompts/step1_route_prompt.md 执行），2026-10-28",
+  "notes": "机柜组 target_read 设为“一条路径”是推断（机柜沿右墙纵深排列，引向走廊尽头）"
+}

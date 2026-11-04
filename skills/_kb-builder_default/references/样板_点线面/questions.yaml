@@ -1,0 +1,355 @@
+# 点线面问题库（由 01点线面的评审标准.md v2.0 编译生成）
+# 要改问题，先改评审标准里对应条目的“观察要点 / 合格表现 / 不合格表现”，再重新编译，不要直接改这里的措辞。
+#
+# observations：Jev 实际回答的英文问题
+#   type      noul | choice
+#   q         问题模板。`scene` 指待评原图；{subject} 主体；{item} 配合 over 逐个展开；{ref:名称} 参考图
+#   criteria  noul 写 {true, false}；choice 写 {选项名: 描述}
+#   over      按某个列表槽位逐项展开     needs  额外依赖的单值槽位
+#   image     scene（默认）| thumb（缩略图，模板写 {thumb_img}）| halves（左右半图，模板写 {half_img}）
+#   options_from  choice 选项由槽位动态生成
+#   lint_ok   人工确认可豁免的检查，附理由
+# clauses：条目 -> 适用条件 + 检查 + 判定方式
+#   checks[].obs  引用的观察问题     good  noul 好的方向（true=是为好）
+#   good_option_slot / good_options / match_brief / match_item   choice 判定方式
+#   aggregate     展开到多个元素时 worst（默认，任一不好即不好）| best（至少一个好即可）
+#   soft          可能出于有意设计：最差判“存疑”，不参与一票否决
+#   point         对应评审标准中该条目的第几条观察要点
+
+block: dlm
+source: 01点线面的评审标准.md
+source_version: "2.0"
+slots: {}
+refs: {}
+
+observations:
+
+  dominant_form:
+    type: choice
+    q: "What mainly organizes the composition of `scene`?"
+    criteria:
+      small_separate_spots: "Many small separate spots, highlights or figures carry the image"
+      long_directional_lines: "Long directional strokes, edges and stripes carry the image"
+      large_areas_of_shape: "Large areas of color and shape carry the image"
+      mixed_balance: "Spots, lines and large areas each play a clearly visible part"
+
+  levels_distinct:
+    type: noul
+    q: "Do some elements in `scene` look clearly more prominent than the rest?"
+    criteria:
+      true: "There are visible levels: a few prominent elements and many quieter ones"
+      false: "All elements look about equally large and strong"
+
+  first_noticed:
+    type: choice
+    q: "Which part of `scene` does the eye land on first?"
+    options_from: [subject, repeated_groups, guiding_lines, large_areas]
+
+  subject_stands_out:
+    type: noul
+    needs: [subject]
+    q: "Does {subject} stand out clearly from its surroundings in `scene`?"
+    criteria:
+      true: "{subject} is easy to find at a glance"
+      false: "{subject} blends into its surroundings"
+
+  points_equally_loud:
+    type: noul
+    over: point_groups
+    q: "Are all of {item} in `scene` about equally eye-catching?"
+    criteria:
+      true: "None of them stands out, so the eye jumps from one to another"
+      false: "Some of them are clearly stronger, or they form readable clusters"
+
+  points_pull_from_subject:
+    type: noul
+    over: point_groups
+    needs: [subject]
+    q: "Do {item} in `scene` pull the eye away from {subject}?"
+    criteria:
+      true: "The eye keeps going to {item} instead of {subject}"
+      false: "{item} stay in a supporting role"
+
+  line_visible_full:
+    type: noul
+    over: guiding_lines
+    q: "Looking at the whole of `scene`, is {item} clearly visible?"
+    criteria:
+      true: "{item} can be seen without searching for it"
+      false: "{item} is so faint or small that it is easy to miss"
+
+  line_path_continuous:
+    type: noul
+    over: guiding_lines
+    q: "Can the eye follow {item} in `scene` as one continuous path?"
+    criteria:
+      true: "The path is easy to follow from start to end"
+      false: "Breaks, crossings or tangles make the path get lost"
+
+  line_leads_to_subject:
+    type: noul
+    over: guiding_lines
+    needs: [subject]
+    q: "Does following {item} in `scene` bring the eye to {subject}?"
+    criteria:
+      true: "{item} points at, frames or converges near {subject}"
+      false: "{item} leads off toward an edge or an empty area"
+
+  line_spans_far:
+    type: noul
+    over: guiding_lines
+    q: "Does {item} stretch across at least half of `scene` in its main direction?"
+    criteria:
+      true: "{item} covers a long distance across the image"
+      false: "{item} is short compared with the image"
+
+  line_contrast:
+    type: noul
+    over: guiding_lines
+    q: "Does {item} stand out clearly against what is behind it in `scene`?"
+    criteria:
+      true: "{item} has strong contrast with its background"
+      false: "{item} is close in tone and color to its background"
+
+  line_reads_as_band:
+    type: noul
+    over: guiding_lines
+    q: "Is {item} in `scene` so wide that it looks more like a flat area than a line?"
+    criteria:
+      true: "Its width is as noticeable as its length"
+      false: "It reads mainly as a direction or path"
+
+  area_shape_clear:
+    type: noul
+    over: large_areas
+    q: "In `scene`, is the overall shape of {item} easy to see?"
+    criteria:
+      true: "Its extent and outline can be read as one shape"
+      false: "It is hard to tell where {item} begins and ends"
+
+  area_broken_up:
+    type: noul
+    over: large_areas
+    q: "Is {item} in `scene` broken into many small fragments by highlights, shadows or texture?"
+    criteria:
+      true: "Small bright and dark pieces chop it up so it no longer reads as one area"
+      false: "Its surface detail stays inside one readable area"
+    lint_ok: {or: "列举碎片来源，判断只有一个：是否被切碎"}
+
+  shapes_merge:
+    type: noul
+    q: "In `scene`, do neighboring shapes touch or overlap so that it is hard to tell them apart?"
+    criteria:
+      true: "Some shapes stick together and their boundaries are unclear"
+      false: "Neighboring shapes stay distinct"
+    lint_ok: {or: "touch/overlap 是同一现象的两种形态"}
+
+  distracting_gaps:
+    type: noul
+    q: "Are there small eye-catching gaps or slivers of background between shapes in `scene`?"
+    criteria:
+      true: "Thin awkward gaps or holes between shapes catch the eye"
+      false: "The spaces between shapes are calm or clearly shaped"
+    lint_ok: {or: "gaps/slivers 为同义描述"}
+
+  subject_outline_readable:
+    type: noul
+    needs: [subject]
+    q: "Is the outline of {subject} easy to read against the background in `scene`?"
+    criteria:
+      true: "The silhouette of {subject} separates clearly from what is behind it"
+      false: "The silhouette of {subject} dissolves into the background"
+
+  subject_outline_noisy:
+    type: noul
+    needs: [subject]
+    q: "Is the outline of {subject} in `scene` broken up by many small random notches and bumps?"
+    criteria:
+      true: "The outline looks ragged everywhere, with no clear long curves or key points"
+      false: "The outline has clear long curves or a few deliberate sharp points"
+    lint_ok: {and: "notches/bumps 是同一种轮廓破碎"}
+
+  group_reads_as:
+    type: choice
+    over: repeated_groups
+    q: "As a whole, how do {item} in `scene` read?"
+    criteria:
+      separate_items: "As separate individual items, each noticed on its own"
+      one_continuous_path: "As one row or path that the eye follows"
+      one_filled_area: "As one filled area or block"
+
+  glow_clutter:
+    type: noul
+    q: "Do the highlights, glows and small bright spots in `scene` look scattered and noisy?"
+    criteria:
+      true: "Bright spots are sprinkled everywhere and compete with each other"
+      false: "The lighting effects stay organized and support the mood"
+    lint_ok: {and: "highlights/glows/spots 是同一类元素"}
+
+  highlights_compete_subject:
+    type: noul
+    needs: [subject]
+    q: "Do highlights far away from {subject} in `scene` pull the eye away from {subject}?"
+    criteria:
+      true: "A bright area away from {subject} is as eye-catching as {subject}"
+      false: "Bright accents near {subject} frame it, and highlights elsewhere stay secondary"
+
+  spots_noticeable:
+    type: noul
+    q: "Do small separate spots form a clearly visible part of the design of `scene`?"
+    criteria:
+      true: "Small spots are noticed without searching for them"
+      false: "Small spots are absent or too weak to notice"
+
+  lines_noticeable:
+    type: noul
+    q: "Do long lines or stripes form a clearly visible part of the design of `scene`?"
+    criteria:
+      true: "Lines are noticed without searching for them"
+      false: "Lines are absent or too weak to notice"
+    lint_ok: {or: "lines/stripes 为同类元素"}
+
+  areas_noticeable:
+    type: noul
+    q: "Do large blocks of shape form a clearly visible part of the design of `scene`?"
+    criteria:
+      true: "Large blocks are noticed without searching for them"
+      false: "Large blocks are absent or too weak to notice"
+
+  lopsided:
+    type: noul
+    q: "Does `scene` feel lopsided, as if one side is much heavier than the other?"
+    criteria:
+      true: "The image seems to tip toward one side"
+      false: "The weights on each side feel held together"
+
+  half_holds_eye:
+    type: noul
+    image: halves
+    q: "Does this part of an image, {half_img}, contain something that holds the viewer's attention?"
+    criteria:
+      true: "There is a clear point of interest in this part"
+      false: "This part is a monotonous stretch with nothing to rest the eye on"
+
+  thumb_subject_visible:
+    type: noul
+    image: thumb
+    needs: [subject]
+    q: "In this small version of the image, {thumb_img}, is {subject} still easy to pick out?"
+    criteria:
+      true: "{subject} is still a clear focal point at this size"
+      false: "{subject} dissolves into its surroundings at this size"
+
+  thumb_group_visible:
+    type: noul
+    image: thumb
+    over: repeated_groups
+    q: "In this small version of the image, {thumb_img}, can {item} still be seen as a group?"
+    criteria:
+      true: "{item} are still readable as one group"
+      false: "{item} turn into noise or disappear"
+
+clauses:
+
+  D01:
+    title: 关键元素在实际分析范围内发挥预期作用
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_visible_full, good: true, aggregate: worst, point: 1}
+
+  D02:
+    title: 画面的主导构成符合表达目标
+    checks:
+      - {obs: dominant_form, match_brief: dominant_form_target, point: 1}
+
+  D03:
+    title: 需要形成对比的视觉层次能够区分
+    applies_if: [brief.goal != uniform_pattern]
+    checks:
+      - {obs: levels_distinct, good: true, point: 1}
+
+  D04:
+    title: 需要强调的焦点能够被识别
+    applies_if: [scene.subject]
+    checks:
+      - {obs: first_noticed, good_option_slot: subject, point: 1}
+      - {obs: subject_stands_out, good: true, point: 2}
+
+  D05:
+    title: 多点分布形成可读的停顿关系
+    applies_if: [scene.point_groups, brief.goal != uniform_pattern]
+    checks:
+      - {obs: points_equally_loud, good: false, aggregate: worst, point: 1}
+      - {obs: points_pull_from_subject, good: false, aggregate: worst, point: 2, applies_if: [scene.subject]}
+
+  D06:
+    title: 承担引导任务的线具有有效连续性
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_path_continuous, good: true, aggregate: worst, point: 1}
+      - {obs: line_leads_to_subject, good: true, aggregate: best, point: 2, applies_if: [scene.subject]}
+
+  D07:
+    title: 需要形成强线感时，跨度与显著性足够
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_spans_far, good: true, aggregate: best, soft: true, point: 1}
+      - {obs: line_contrast, good: true, aggregate: best, point: 2}
+
+  D08:
+    title: 线宽与面感的关系符合设计意图
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_reads_as_band, good: false, aggregate: worst, soft: true, point: 1}
+
+  D09:
+    title: 主要块面的形状与归属清楚
+    applies_if: [scene.large_areas]
+    checks:
+      - {obs: area_shape_clear, good: true, aggregate: worst, point: 1}
+      - {obs: area_broken_up, good: false, aggregate: worst, point: 2}
+
+  D10:
+    title: 正形与负空间共同支持形体识别
+    checks:
+      - {obs: shapes_merge, good: false, point: 1}
+      - {obs: distracting_gaps, good: false, point: 2}
+
+  D11:
+    title: 轮廓的节点与流动特征符合所需感受
+    applies_if: [scene.subject]
+    checks:
+      - {obs: subject_outline_readable, good: true, point: 1}
+      - {obs: subject_outline_noisy, good: false, soft: true, point: 2}
+
+  D12:
+    title: 点线聚集后的整体性质没有偏离目标
+    applies_if: [scene.repeated_groups]
+    checks:
+      - {obs: group_reads_as, match_item: target_read, aggregate: worst, point: 1}
+
+  D13:
+    title: 光影与材质细节没有破坏构成
+    checks:
+      - {obs: glow_clutter, good: false, point: 1}
+      - {obs: highlights_compete_subject, good: false, point: 2, applies_if: [scene.subject]}
+
+  D14:
+    title: 追求多类平衡时，各类确实具有可感知的分量
+    applies_if: ["brief.balance_target in [point_line, point_area, line_area, all_three]"]
+    checks:
+      - {obs: spots_noticeable, good: true, point: 1, applies_if: ["brief.balance_target in [point_line, point_area, all_three]"]}
+      - {obs: lines_noticeable, good: true, point: 2, applies_if: ["brief.balance_target in [point_line, line_area, all_three]"]}
+      - {obs: areas_noticeable, good: true, point: 3, applies_if: ["brief.balance_target in [point_area, line_area, all_three]"]}
+
+  D15:
+    title: 各类元素的分布形成有意的整体关系
+    checks:
+      - {obs: lopsided, good: false, point: 1}
+      - {obs: half_holds_eye, good: true, aggregate: worst, soft: true, point: 2}
+
+  D16:
+    title: 最终观看条件下，必要层次仍然成立
+    checks:
+      - {obs: thumb_subject_visible, good: true, point: 1, applies_if: [scene.subject]}
+      - {obs: thumb_group_visible, good: true, aggregate: worst, point: 2, applies_if: [scene.repeated_groups]}

@@ -1,0 +1,12 @@
+# 点线面知识块图片登记表
+# role: reference（参考图，被问题用 {ref:名称} 引用，会发给 Jev）| example（案例图，条目出问题时附给大模型）
+# 文件名：<ex|ref>_<条目>_<描述>.<png|jpg>，放在同目录 images/ 下
+images: []
+
+# 示例（复制后修改）：
+#  - id: ex_D04_焦点被高光抢走
+#    file: images/ex_D04_焦点被高光抢走.jpg
+#    role: example
+#    clauses: [D04, D13]
+#    label: 不合格          # 合格 | 不合格
+#    note: 右侧机柜高光比走廊尽头更亮，第一眼落在右侧

@@ -1,0 +1,4 @@
+blocks:
+  - id: emblem_demo
+    reason: 测试
+    clauses: [P01]

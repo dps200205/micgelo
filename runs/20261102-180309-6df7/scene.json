@@ -1,0 +1,66 @@
+{
+  "subject": {
+    "name": "the central corridor leading to the back control room",
+    "location": "center and background"
+  },
+  "repeated_groups": [
+    {
+      "name": "the row of tall metal electrical cabinets",
+      "location": "right wall",
+      "target_read": "one_continuous_path"
+    },
+    {
+      "name": "the array of control panels and monitors",
+      "location": "back wall",
+      "target_read": "one_filled_area"
+    }
+  ],
+  "guiding_lines": [
+    {
+      "name": "the yellow safety lines painted on the floor",
+      "location": "floor, converging towards the center"
+    },
+    {
+      "name": "the pipes and conduits running along the ceiling",
+      "location": "ceiling, longitudinal direction"
+    }
+  ],
+  "large_areas": [
+    {
+      "name": "the large concrete pillar with red stripes and graphics",
+      "location": "left foreground"
+    },
+    {
+      "name": "the red painted floor zone",
+      "location": "center floor"
+    },
+    {
+      "name": "the grey concrete ceiling surface",
+      "location": "top"
+    }
+  ],
+  "dense_regions": [
+    {
+      "name": "the cluster of buttons and screens on the back console",
+      "location": "back wall center"
+    },
+    {
+      "name": "the ventilation grilles and labels on the side cabinets",
+      "location": "right foreground"
+    }
+  ],
+  "point_groups": [
+    {
+      "name": "the rectangular ceiling light fixtures",
+      "location": "ceiling center"
+    },
+    {
+      "name": "the small indicator lights and switches on the control panels",
+      "location": "back wall"
+    },
+    {
+      "name": "the yellow triangular warning signs",
+      "location": "on the left pillar and right cabinet"
+    }
+  ]
+}

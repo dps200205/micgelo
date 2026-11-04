@@ -1,0 +1,1001 @@
+{
+  "case": "20261102-173242-23b0",
+  "model": "jev-1.14.0",
+  "usage": {
+    "basic": {
+      "input_tokens": 11292,
+      "output_tokens": 1732
+    }
+  },
+  "image": "C:\\Users\\peisongdou\\WorkBuddy\\2026-10-24-15-54-26\\review_pipeline\\runs\\20261102-173242-23b0\\image.jpg",
+  "routing": {
+    "image_type": "项目知识库/01_局内场景/01_PVP场景/01_常规爆破地图",
+    "blocks": [
+      {
+        "id": "dlm",
+        "path": "场景美术基础知识库/平面构成/场景概念设计中的点线面",
+        "reason": "评审场景概念设计的点线面构成与视觉层级。",
+        "clauses": [
+          "D01",
+          "D02",
+          "D03",
+          "D04",
+          "D05",
+          "D06",
+          "D07",
+          "D08",
+          "D09",
+          "D10",
+          "D11",
+          "D12",
+          "D13",
+          "D15",
+          "D16"
+        ],
+        "skipped": {
+          "D14": "项目说明未要求多类平衡（balance_target 为 null）。"
+        }
+      }
+    ],
+    "skipped_blocks": [],
+    "missing_knowledge": [
+      {
+        "path": "项目知识库/01_局内场景/01_PVP场景/01_常规爆破地图/场景中的物件摆放规范",
+        "reason": "用户明确说明是PVP爆破场景，该节点适用但状态为待建设，无法提供具体的物件摆放规范评审。"
+      },
+      {
+        "path": "项目知识库/01_局内场景/01_PVP场景/01_常规爆破地图/场景中的色彩使用规范",
+        "reason": "用户明确说明是PVP爆破场景，该节点适用但状态为待建设，无法提供具体的色彩规范评审。"
+      },
+      {
+        "path": "场景美术基础知识库/场景灯光",
+        "reason": "画面中有明显的顶光和自发光灯管，涉及光影氛围营造，但该知识块待建设。"
+      },
+      {
+        "path": "场景美术基础知识库/立体构成",
+        "reason": "场景涉及复杂的透视结构和空间体积感，立体构成知识块待建设。"
+      },
+      {
+        "path": "场景美术基础知识库/色彩关系",
+        "reason": "画面有明显的冷暖对比（灰色混凝土与红色地面/标语），色彩关系知识块待建设。"
+      },
+      {
+        "path": "场景美术基础知识库/黑白灰画面层级",
+        "reason": "需要评估画面的素描关系和视觉重心，该知识块待建设。"
+      }
+    ],
+    "extra": null
+  },
+  "blocks": {
+    "dlm": {
+      "name": "点线面",
+      "kb": "basic",
+      "path": "场景美术基础知识库/平面构成/场景概念设计中的点线面",
+      "clauses": {
+        "D01": {
+          "title": "关键元素在实际分析范围内发挥预期作用",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "line_visible_full",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.93,
+              "items": [
+                {
+                  "qid": "dlm__line_visible_full__yellow_safety_lines_marking_the_edges_of_the",
+                  "req": "basic",
+                  "item": "yellow_safety_lines_marking_the_edges_of_the",
+                  "answer": 0.93,
+                  "probabilities": null,
+                  "p_good": 0.93,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__line_visible_full__horizontal_red_stripe_painted_across_the_left",
+                  "req": "basic",
+                  "item": "horizontal_red_stripe_painted_across_the_left",
+                  "answer": 0.95,
+                  "probabilities": null,
+                  "p_good": 0.95,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.93,
+          "verdict": "合格"
+        },
+        "D02": {
+          "title": "画面的主导构成符合表达目标",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "dominant_form",
+              "soft": false,
+              "aggregate": "worst",
+              "good": null,
+              "verdict": "描述",
+              "p_good": null,
+              "items": [
+                {
+                  "qid": "dlm__dominant_form",
+                  "req": "basic",
+                  "item": null,
+                  "answer": "long_directional_lines",
+                  "probabilities": {
+                    "small_separate_spots": 0.0,
+                    "long_directional_lines": 0.68,
+                    "large_areas_of_shape": 0.13,
+                    "mixed_balance": 0.19
+                  },
+                  "p_good": null,
+                  "gated": null,
+                  "verdict": null
+                }
+              ]
+            }
+          ],
+          "p_min": null,
+          "verdict": "描述"
+        },
+        "D03": {
+          "title": "需要形成对比的视觉层次能够区分",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "levels_distinct",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.94,
+              "items": [
+                {
+                  "qid": "dlm__levels_distinct",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.94,
+                  "probabilities": null,
+                  "p_good": 0.94,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.94,
+          "verdict": "合格"
+        },
+        "D04": {
+          "title": "需要强调的焦点能够被识别",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "first_noticed",
+              "soft": false,
+              "aggregate": "worst",
+              "good": null,
+              "verdict": "不合格",
+              "p_good": 0.1,
+              "items": [
+                {
+                  "qid": "dlm__first_noticed",
+                  "req": "basic",
+                  "item": null,
+                  "answer": "red_painted_floor_zone_in_the_central_corridor",
+                  "probabilities": {
+                    "control_console_area_at_the_far_end_of_the": 0.1,
+                    "row_of_tall_metal_electrical_cabinets_along_the": 0.07,
+                    "series_of_overhead_pipes_and_conduits_running": 0.0,
+                    "yellow_safety_lines_marking_the_edges_of_the": 0.01,
+                    "horizontal_red_stripe_painted_across_the_left": 0.02,
+                    "red_painted_floor_zone_in_the_central_corridor": 0.53,
+                    "large_concrete_pillar_structure_in_the_left": 0.26,
+                    "back_wall_surface_behind_the_control_consoles": 0.01
+                  },
+                  "p_good": 0.1,
+                  "gated": null,
+                  "verdict": "不合格"
+                }
+              ]
+            },
+            {
+              "obs": "subject_stands_out",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "存疑",
+              "p_good": 0.52,
+              "items": [
+                {
+                  "qid": "dlm__subject_stands_out",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.52,
+                  "probabilities": null,
+                  "p_good": 0.52,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.1,
+          "verdict": "不合格"
+        },
+        "D05": {
+          "title": "多点分布形成可读的停顿关系",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "points_equally_loud",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "合格",
+              "p_good": 0.89,
+              "items": [
+                {
+                  "qid": "dlm__points_equally_loud__rectangular_ceiling_light_fixtures",
+                  "req": "basic",
+                  "item": "rectangular_ceiling_light_fixtures",
+                  "answer": 0.11,
+                  "probabilities": null,
+                  "p_good": 0.89,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__points_equally_loud__yellow_triangular_warning_signs_on_the_walls_and",
+                  "req": "basic",
+                  "item": "yellow_triangular_warning_signs_on_the_walls_and",
+                  "answer": 0.11,
+                  "probabilities": null,
+                  "p_good": 0.89,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            },
+            {
+              "obs": "points_pull_from_subject",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "合格",
+              "p_good": 0.74,
+              "items": [
+                {
+                  "qid": "dlm__points_pull_from_subject__rectangular_ceiling_light_fixtures",
+                  "req": "basic",
+                  "item": "rectangular_ceiling_light_fixtures",
+                  "answer": 0.26,
+                  "probabilities": null,
+                  "p_good": 0.74,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__points_pull_from_subject__yellow_triangular_warning_signs_on_the_walls_and",
+                  "req": "basic",
+                  "item": "yellow_triangular_warning_signs_on_the_walls_and",
+                  "answer": 0.22,
+                  "probabilities": null,
+                  "p_good": 0.78,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.74,
+          "verdict": "合格"
+        },
+        "D06": {
+          "title": "承担引导任务的线具有有效连续性",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "line_path_continuous",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "存疑",
+              "p_good": 0.55,
+              "items": [
+                {
+                  "qid": "dlm__line_path_continuous__yellow_safety_lines_marking_the_edges_of_the",
+                  "req": "basic",
+                  "item": "yellow_safety_lines_marking_the_edges_of_the",
+                  "answer": 0.55,
+                  "probabilities": null,
+                  "p_good": 0.55,
+                  "gated": null,
+                  "verdict": "存疑"
+                },
+                {
+                  "qid": "dlm__line_path_continuous__horizontal_red_stripe_painted_across_the_left",
+                  "req": "basic",
+                  "item": "horizontal_red_stripe_painted_across_the_left",
+                  "answer": 0.58,
+                  "probabilities": null,
+                  "p_good": 0.58,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            },
+            {
+              "obs": "line_leads_to_subject",
+              "soft": false,
+              "aggregate": "best",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.82,
+              "items": [
+                {
+                  "qid": "dlm__line_leads_to_subject__yellow_safety_lines_marking_the_edges_of_the",
+                  "req": "basic",
+                  "item": "yellow_safety_lines_marking_the_edges_of_the",
+                  "answer": 0.82,
+                  "probabilities": null,
+                  "p_good": 0.82,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__line_leads_to_subject__horizontal_red_stripe_painted_across_the_left",
+                  "req": "basic",
+                  "item": "horizontal_red_stripe_painted_across_the_left",
+                  "answer": 0.58,
+                  "probabilities": null,
+                  "p_good": 0.58,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.55,
+          "verdict": "存疑"
+        },
+        "D07": {
+          "title": "需要形成强线感时，跨度与显著性足够",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "line_spans_far",
+              "soft": true,
+              "aggregate": "best",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.8,
+              "items": [
+                {
+                  "qid": "dlm__line_spans_far__yellow_safety_lines_marking_the_edges_of_the",
+                  "req": "basic",
+                  "item": "yellow_safety_lines_marking_the_edges_of_the",
+                  "answer": 0.8,
+                  "probabilities": null,
+                  "p_good": 0.8,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__line_spans_far__horizontal_red_stripe_painted_across_the_left",
+                  "req": "basic",
+                  "item": "horizontal_red_stripe_painted_across_the_left",
+                  "answer": 0.44,
+                  "probabilities": null,
+                  "p_good": 0.44,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            },
+            {
+              "obs": "line_contrast",
+              "soft": false,
+              "aggregate": "best",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.91,
+              "items": [
+                {
+                  "qid": "dlm__line_contrast__yellow_safety_lines_marking_the_edges_of_the",
+                  "req": "basic",
+                  "item": "yellow_safety_lines_marking_the_edges_of_the",
+                  "answer": 0.88,
+                  "probabilities": null,
+                  "p_good": 0.88,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__line_contrast__horizontal_red_stripe_painted_across_the_left",
+                  "req": "basic",
+                  "item": "horizontal_red_stripe_painted_across_the_left",
+                  "answer": 0.91,
+                  "probabilities": null,
+                  "p_good": 0.91,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.91,
+          "verdict": "合格"
+        },
+        "D08": {
+          "title": "线宽与面感的关系符合设计意图",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "line_reads_as_band",
+              "soft": true,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "存疑",
+              "p_good": 0.31,
+              "items": [
+                {
+                  "qid": "dlm__line_reads_as_band__yellow_safety_lines_marking_the_edges_of_the",
+                  "req": "basic",
+                  "item": "yellow_safety_lines_marking_the_edges_of_the",
+                  "answer": 0.24,
+                  "probabilities": null,
+                  "p_good": 0.76,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__line_reads_as_band__horizontal_red_stripe_painted_across_the_left",
+                  "req": "basic",
+                  "item": "horizontal_red_stripe_painted_across_the_left",
+                  "answer": 0.69,
+                  "probabilities": null,
+                  "p_good": 0.31,
+                  "gated": null,
+                  "verdict": "不合格"
+                }
+              ]
+            }
+          ],
+          "p_min": null,
+          "verdict": "存疑"
+        },
+        "D09": {
+          "title": "主要块面的形状与归属清楚",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "area_shape_clear",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.71,
+              "items": [
+                {
+                  "qid": "dlm__area_shape_clear__red_painted_floor_zone_in_the_central_corridor",
+                  "req": "basic",
+                  "item": "red_painted_floor_zone_in_the_central_corridor",
+                  "answer": 0.87,
+                  "probabilities": null,
+                  "p_good": 0.87,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__area_shape_clear__large_concrete_pillar_structure_in_the_left",
+                  "req": "basic",
+                  "item": "large_concrete_pillar_structure_in_the_left",
+                  "answer": 0.91,
+                  "probabilities": null,
+                  "p_good": 0.91,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__area_shape_clear__back_wall_surface_behind_the_control_consoles",
+                  "req": "basic",
+                  "item": "back_wall_surface_behind_the_control_consoles",
+                  "answer": 0.71,
+                  "probabilities": null,
+                  "p_good": 0.71,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            },
+            {
+              "obs": "area_broken_up",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "合格",
+              "p_good": 0.79,
+              "items": [
+                {
+                  "qid": "dlm__area_broken_up__red_painted_floor_zone_in_the_central_corridor",
+                  "req": "basic",
+                  "item": "red_painted_floor_zone_in_the_central_corridor",
+                  "answer": 0.1,
+                  "probabilities": null,
+                  "p_good": 0.9,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__area_broken_up__large_concrete_pillar_structure_in_the_left",
+                  "req": "basic",
+                  "item": "large_concrete_pillar_structure_in_the_left",
+                  "answer": 0.1,
+                  "probabilities": null,
+                  "p_good": 0.9,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__area_broken_up__back_wall_surface_behind_the_control_consoles",
+                  "req": "basic",
+                  "item": "back_wall_surface_behind_the_control_consoles",
+                  "answer": 0.21,
+                  "probabilities": null,
+                  "p_good": 0.79,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.71,
+          "verdict": "合格"
+        },
+        "D10": {
+          "title": "正形与负空间共同支持形体识别",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "shapes_merge",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "合格",
+              "p_good": 0.75,
+              "items": [
+                {
+                  "qid": "dlm__shapes_merge",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.25,
+                  "probabilities": null,
+                  "p_good": 0.75,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            },
+            {
+              "obs": "distracting_gaps",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "存疑",
+              "p_good": 0.66,
+              "items": [
+                {
+                  "qid": "dlm__distracting_gaps",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.34,
+                  "probabilities": null,
+                  "p_good": 0.66,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.66,
+          "verdict": "存疑"
+        },
+        "D11": {
+          "title": "轮廓的节点与流动特征符合所需感受",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "subject_outline_readable",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.75,
+              "items": [
+                {
+                  "qid": "dlm__subject_outline_readable",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.75,
+                  "probabilities": null,
+                  "p_good": 0.75,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            },
+            {
+              "obs": "subject_outline_noisy",
+              "soft": true,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "合格",
+              "p_good": 0.9,
+              "items": [
+                {
+                  "qid": "dlm__subject_outline_noisy",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.1,
+                  "probabilities": null,
+                  "p_good": 0.9,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.75,
+          "verdict": "合格"
+        },
+        "D12": {
+          "title": "点线聚集后的整体性质没有偏离目标",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "group_reads_as",
+              "soft": false,
+              "aggregate": "worst",
+              "good": null,
+              "verdict": "合格",
+              "p_good": 0.75,
+              "items": [
+                {
+                  "qid": "dlm__group_reads_as__row_of_tall_metal_electrical_cabinets_along_the",
+                  "req": "basic",
+                  "item": "row_of_tall_metal_electrical_cabinets_along_the",
+                  "answer": "one_continuous_path",
+                  "probabilities": {
+                    "separate_items": 0.11,
+                    "one_continuous_path": 0.75,
+                    "one_filled_area": 0.14
+                  },
+                  "p_good": 0.75,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__group_reads_as__series_of_overhead_pipes_and_conduits_running",
+                  "req": "basic",
+                  "item": "series_of_overhead_pipes_and_conduits_running",
+                  "answer": "one_continuous_path",
+                  "probabilities": {
+                    "separate_items": 0.24,
+                    "one_continuous_path": 0.75,
+                    "one_filled_area": 0.01
+                  },
+                  "p_good": 0.75,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.75,
+          "verdict": "合格"
+        },
+        "D13": {
+          "title": "光影与材质细节没有破坏构成",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "glow_clutter",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "合格",
+              "p_good": 0.9,
+              "items": [
+                {
+                  "qid": "dlm__glow_clutter",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.1,
+                  "probabilities": null,
+                  "p_good": 0.9,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            },
+            {
+              "obs": "highlights_compete_subject",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "存疑",
+              "p_good": 0.64,
+              "items": [
+                {
+                  "qid": "dlm__highlights_compete_subject",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.36,
+                  "probabilities": null,
+                  "p_good": 0.64,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.64,
+          "verdict": "存疑"
+        },
+        "D14": {
+          "title": "追求多类平衡时，各类确实具有可感知的分量",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [],
+          "verdict": "未选中",
+          "reason": "项目说明未要求多类平衡（balance_target 为 null）。"
+        },
+        "D15": {
+          "title": "各类元素的分布形成有意的整体关系",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "lopsided",
+              "soft": false,
+              "aggregate": "worst",
+              "good": false,
+              "verdict": "存疑",
+              "p_good": 0.52,
+              "items": [
+                {
+                  "qid": "dlm__lopsided",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.48,
+                  "probabilities": null,
+                  "p_good": 0.52,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            },
+            {
+              "obs": "half_holds_eye",
+              "soft": true,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.75,
+              "items": [
+                {
+                  "qid": "dlm__half_holds_eye__left",
+                  "req": "basic",
+                  "item": "left",
+                  "answer": 0.75,
+                  "probabilities": null,
+                  "p_good": 0.75,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__half_holds_eye__right",
+                  "req": "basic",
+                  "item": "right",
+                  "answer": 0.87,
+                  "probabilities": null,
+                  "p_good": 0.87,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.52,
+          "verdict": "存疑"
+        },
+        "D16": {
+          "title": "最终观看条件下，必要层次仍然成立",
+          "kb": "basic",
+          "thresholds": {
+            "pass_at": 0.7,
+            "fail_below": 0.4,
+            "block_pass_rate": 0.8,
+            "veto_below": 0.2,
+            "gate": 0.7
+          },
+          "checks": [
+            {
+              "obs": "thumb_subject_visible",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "存疑",
+              "p_good": 0.58,
+              "items": [
+                {
+                  "qid": "dlm__thumb_subject_visible",
+                  "req": "basic",
+                  "item": null,
+                  "answer": 0.58,
+                  "probabilities": null,
+                  "p_good": 0.58,
+                  "gated": null,
+                  "verdict": "存疑"
+                }
+              ]
+            },
+            {
+              "obs": "thumb_group_visible",
+              "soft": false,
+              "aggregate": "worst",
+              "good": true,
+              "verdict": "合格",
+              "p_good": 0.75,
+              "items": [
+                {
+                  "qid": "dlm__thumb_group_visible__row_of_tall_metal_electrical_cabinets_along_the",
+                  "req": "basic",
+                  "item": "row_of_tall_metal_electrical_cabinets_along_the",
+                  "answer": 0.89,
+                  "probabilities": null,
+                  "p_good": 0.89,
+                  "gated": null,
+                  "verdict": "合格"
+                },
+                {
+                  "qid": "dlm__thumb_group_visible__series_of_overhead_pipes_and_conduits_running",
+                  "req": "basic",
+                  "item": "series_of_overhead_pipes_and_conduits_running",
+                  "answer": 0.75,
+                  "probabilities": null,
+                  "p_good": 0.75,
+                  "gated": null,
+                  "verdict": "合格"
+                }
+              ]
+            }
+          ],
+          "p_min": 0.58,
+          "verdict": "存疑"
+        }
+      },
+      "summary": {
+        "verdict": "不合格",
+        "evaluated": 14,
+        "passed": 7,
+        "uncertain": 6,
+        "failed": 1,
+        "pass_rate": 0.5,
+        "vetoes": [
+          "D04"
+        ],
+        "rule": "合格率 > 80% 且无条目 < 0.2"
+      }
+    }
+  }
+}

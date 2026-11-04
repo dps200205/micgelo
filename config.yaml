@@ -1,0 +1,32 @@
+# 评审工具配置。可在界面“判定标准”“设置”中修改，也可直接编辑。
+kb_root: ../cfm场景概念设计知识库
+model: jev-latest
+api: https://api.typesafe.ai/v1/systemone
+judging:
+  default:
+    pass_at: 0.7
+    fail_below: 0.4
+    block_pass_rate: 0.8
+    veto_below: 0.2
+    gate: 0.7
+  blocks: {}
+  clauses: {}
+slots:
+  single:
+  - subject
+  lists:
+  - repeated_groups
+  - guiding_lines
+  - large_areas
+  - dense_regions
+  - point_groups
+dominant_form_map:
+  point: small_separate_spots
+  line: long_directional_lines
+  area: large_areas_of_shape
+  mixed: mixed_balance
+image:
+  max_side: 1568
+  min_side: 280
+  thumb_short_side: 280
+price_per_mtok: 0.042

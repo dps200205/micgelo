@@ -1,0 +1,18 @@
+# 用户说明（第一步由大模型根据用户输入整理，意图类信息不让 Jev 猜）
+image: image.jpg
+user_input: 这是一张pvp爆破场景概念设计图
+image_type: 项目知识库/01_局内场景/01_PVP场景/01_常规爆破地图
+purpose: PVP 常规爆破地图的局部场景概念设计（工业风地下走廊／控制室）
+subject_hint: 走廊尽头的控制室
+# 组织目标：hierarchy（有主次）| uniform_pattern | minimal | equal_display | balanced_groups
+goal: hierarchy
+# 预期主导形式：point | line | area | mixed | null（未指定，只描述）
+dominant_form_target: null
+# 多类平衡目标：none | point_line | point_area | line_area | all_three
+balance_target: none
+view_size: 1920x816
+# 发给 Jev 的背景说明（英文）：图中的非美术内容
+scene_notes: "The plain white human figure standing in the middle of the corridor is a scale marker added for reference. It is not part of the artwork; ignore it when judging the composition."
+assumptions:
+  - 主体“走廊尽头的控制室”由大模型推断，用户未指定
+  - 白色人形为比例参考，不参与评审

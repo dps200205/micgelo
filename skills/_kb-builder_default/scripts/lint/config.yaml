@@ -1,0 +1,8 @@
+# 检查脚本用的最小配置。运行时用 --kb 指定知识库路径。
+kb_root: .
+slots:
+  single: [subject]
+  lists: [repeated_groups, guiding_lines, large_areas, dense_regions, point_groups]
+image:
+  max_side: 1568
+  min_side: 280

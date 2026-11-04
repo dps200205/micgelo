@@ -1,0 +1,515 @@
+{
+  "request": {
+    "model": "jev-latest",
+    "state": {
+      "scene": "756c3153-scene",
+      "notes": "The plain white human figure standing in the middle of the corridor is a scale marker added for reference. It is not part of the artwork; ignore it when judging the composition."
+    },
+    "assets": {
+      "756c3153-scene": {
+        "type": "image",
+        "part": "img-scene"
+      },
+      "756c3153-thumb": {
+        "type": "image",
+        "part": "img-thumb"
+      },
+      "756c3153-left": {
+        "type": "image",
+        "part": "img-left"
+      },
+      "756c3153-right": {
+        "type": "image",
+        "part": "img-right"
+      }
+    },
+    "questions": {
+      "dlm__line_visible_full__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the red stripe painted along the walls clearly visible?",
+        "criteria": {
+          "true": "The red stripe painted along the walls can be seen without searching for it",
+          "false": "The red stripe painted along the walls is so faint or small that it is easy to miss"
+        }
+      },
+      "dlm__line_visible_full__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the yellow and black hazard stripes along the floor edges clearly visible?",
+        "criteria": {
+          "true": "The yellow and black hazard stripes along the floor edges can be seen without searching for it",
+          "false": "The yellow and black hazard stripes along the floor edges is so faint or small that it is easy to miss"
+        }
+      },
+      "dlm__line_visible_full__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the ceiling edges of the corridor clearly visible?",
+        "criteria": {
+          "true": "The ceiling edges of the corridor can be seen without searching for it",
+          "false": "The ceiling edges of the corridor is so faint or small that it is easy to miss"
+        }
+      },
+      "dlm__dominant_form": {
+        "type": "choice",
+        "instructions": "What mainly organizes the composition of `scene`?",
+        "criteria": {
+          "small_separate_spots": "Many small separate spots, highlights or figures carry the image",
+          "long_directional_lines": "Long directional strokes, edges and stripes carry the image",
+          "large_areas_of_shape": "Large areas of color and shape carry the image",
+          "mixed_balance": "Spots, lines and large areas each play a clearly visible part"
+        }
+      },
+      "dlm__levels_distinct": {
+        "type": "noul",
+        "instructions": "Do some elements in `scene` look clearly more prominent than the rest?",
+        "criteria": {
+          "true": "There are visible levels: a few prominent elements and many quieter ones",
+          "false": "All elements look about equally large and strong"
+        }
+      },
+      "dlm__first_noticed": {
+        "type": "choice",
+        "instructions": "Which part of `scene` does the eye land on first?",
+        "criteria": {
+          "control_room_with_consoles_at_the_far_end_of_the": "the control room with consoles at the far end of the corridor",
+          "tall_metal_electrical_cabinets_along_the_right": "the tall metal electrical cabinets along the right wall",
+          "row_of_control_consoles_on_the_back_wall": "the row of control consoles on the back wall",
+          "red_stripe_painted_along_the_walls": "the red stripe painted along the walls",
+          "yellow_and_black_hazard_stripes_along_the_floor": "the yellow and black hazard stripes along the floor edges",
+          "ceiling_edges_of_the_corridor": "the ceiling edges of the corridor",
+          "large_concrete_pillar_on_the_left": "the large concrete pillar on the left",
+          "red_painted_corridor_floor": "the red painted corridor floor",
+          "curved_ceiling_of_the_corridor": "the curved ceiling of the corridor"
+        }
+      },
+      "dlm__subject_stands_out": {
+        "type": "noul",
+        "instructions": "Does the control room with consoles at the far end of the corridor stand out clearly from its surroundings in `scene`?",
+        "criteria": {
+          "true": "The control room with consoles at the far end of the corridor is easy to find at a glance",
+          "false": "The control room with consoles at the far end of the corridor blends into its surroundings"
+        }
+      },
+      "dlm__points_equally_loud__warning_signs_and_painted_labels_on_the_walls": {
+        "type": "noul",
+        "instructions": "Are all of the warning signs and painted labels on the walls in `scene` about equally eye-catching?",
+        "criteria": {
+          "true": "None of them stands out, so the eye jumps from one to another",
+          "false": "Some of them are clearly stronger, or they form readable clusters"
+        }
+      },
+      "dlm__points_equally_loud__bright_ceiling_lights": {
+        "type": "noul",
+        "instructions": "Are all of the bright ceiling lights in `scene` about equally eye-catching?",
+        "criteria": {
+          "true": "None of them stands out, so the eye jumps from one to another",
+          "false": "Some of them are clearly stronger, or they form readable clusters"
+        }
+      },
+      "dlm__points_pull_from_subject__warning_signs_and_painted_labels_on_the_walls": {
+        "type": "noul",
+        "instructions": "Do the warning signs and painted labels on the walls in `scene` pull the eye away from the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "The eye keeps going to the warning signs and painted labels on the walls instead of the control room with consoles at the far end of the corridor",
+          "false": "The warning signs and painted labels on the walls stay in a supporting role"
+        }
+      },
+      "dlm__points_pull_from_subject__bright_ceiling_lights": {
+        "type": "noul",
+        "instructions": "Do the bright ceiling lights in `scene` pull the eye away from the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "The eye keeps going to the bright ceiling lights instead of the control room with consoles at the far end of the corridor",
+          "false": "The bright ceiling lights stay in a supporting role"
+        }
+      },
+      "dlm__line_path_continuous__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Can the eye follow the red stripe painted along the walls in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "dlm__line_path_continuous__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Can the eye follow the yellow and black hazard stripes along the floor edges in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "dlm__line_path_continuous__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Can the eye follow the ceiling edges of the corridor in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "dlm__line_leads_to_subject__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Does following the red stripe painted along the walls in `scene` bring the eye to the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "The red stripe painted along the walls points at, frames or converges near the control room with consoles at the far end of the corridor",
+          "false": "The red stripe painted along the walls leads off toward an edge or an empty area"
+        }
+      },
+      "dlm__line_leads_to_subject__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Does following the yellow and black hazard stripes along the floor edges in `scene` bring the eye to the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "The yellow and black hazard stripes along the floor edges points at, frames or converges near the control room with consoles at the far end of the corridor",
+          "false": "The yellow and black hazard stripes along the floor edges leads off toward an edge or an empty area"
+        }
+      },
+      "dlm__line_leads_to_subject__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Does following the ceiling edges of the corridor in `scene` bring the eye to the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "The ceiling edges of the corridor points at, frames or converges near the control room with consoles at the far end of the corridor",
+          "false": "The ceiling edges of the corridor leads off toward an edge or an empty area"
+        }
+      },
+      "dlm__line_spans_far__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Does the red stripe painted along the walls stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The red stripe painted along the walls covers a long distance across the image",
+          "false": "The red stripe painted along the walls is short compared with the image"
+        }
+      },
+      "dlm__line_spans_far__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Does the yellow and black hazard stripes along the floor edges stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The yellow and black hazard stripes along the floor edges covers a long distance across the image",
+          "false": "The yellow and black hazard stripes along the floor edges is short compared with the image"
+        }
+      },
+      "dlm__line_spans_far__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Does the ceiling edges of the corridor stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The ceiling edges of the corridor covers a long distance across the image",
+          "false": "The ceiling edges of the corridor is short compared with the image"
+        }
+      },
+      "dlm__line_contrast__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Does the red stripe painted along the walls stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The red stripe painted along the walls has strong contrast with its background",
+          "false": "The red stripe painted along the walls is close in tone and color to its background"
+        }
+      },
+      "dlm__line_contrast__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Does the yellow and black hazard stripes along the floor edges stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The yellow and black hazard stripes along the floor edges has strong contrast with its background",
+          "false": "The yellow and black hazard stripes along the floor edges is close in tone and color to its background"
+        }
+      },
+      "dlm__line_contrast__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Does the ceiling edges of the corridor stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The ceiling edges of the corridor has strong contrast with its background",
+          "false": "The ceiling edges of the corridor is close in tone and color to its background"
+        }
+      },
+      "dlm__line_reads_as_band__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Is the red stripe painted along the walls in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "dlm__line_reads_as_band__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Is the yellow and black hazard stripes along the floor edges in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "dlm__line_reads_as_band__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Is the ceiling edges of the corridor in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "dlm__area_shape_clear__large_concrete_pillar_on_the_left": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the large concrete pillar on the left easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the large concrete pillar on the left begins and ends"
+        }
+      },
+      "dlm__area_shape_clear__red_painted_corridor_floor": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the red painted corridor floor easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the red painted corridor floor begins and ends"
+        }
+      },
+      "dlm__area_shape_clear__curved_ceiling_of_the_corridor": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the curved ceiling of the corridor easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the curved ceiling of the corridor begins and ends"
+        }
+      },
+      "dlm__area_broken_up__large_concrete_pillar_on_the_left": {
+        "type": "noul",
+        "instructions": "Is the large concrete pillar on the left in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "dlm__area_broken_up__red_painted_corridor_floor": {
+        "type": "noul",
+        "instructions": "Is the red painted corridor floor in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "dlm__area_broken_up__curved_ceiling_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Is the curved ceiling of the corridor in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "dlm__shapes_merge": {
+        "type": "noul",
+        "instructions": "In `scene`, do neighboring shapes touch or overlap so that it is hard to tell them apart?",
+        "criteria": {
+          "true": "Some shapes stick together and their boundaries are unclear",
+          "false": "Neighboring shapes stay distinct"
+        }
+      },
+      "dlm__distracting_gaps": {
+        "type": "noul",
+        "instructions": "Are there small eye-catching gaps or slivers of background between shapes in `scene`?",
+        "criteria": {
+          "true": "Thin awkward gaps or holes between shapes catch the eye",
+          "false": "The spaces between shapes are calm or clearly shaped"
+        }
+      },
+      "dlm__subject_outline_readable": {
+        "type": "noul",
+        "instructions": "Is the outline of the control room with consoles at the far end of the corridor easy to read against the background in `scene`?",
+        "criteria": {
+          "true": "The silhouette of the control room with consoles at the far end of the corridor separates clearly from what is behind it",
+          "false": "The silhouette of the control room with consoles at the far end of the corridor dissolves into the background"
+        }
+      },
+      "dlm__subject_outline_noisy": {
+        "type": "noul",
+        "instructions": "Is the outline of the control room with consoles at the far end of the corridor in `scene` broken up by many small random notches and bumps?",
+        "criteria": {
+          "true": "The outline looks ragged everywhere, with no clear long curves or key points",
+          "false": "The outline has clear long curves or a few deliberate sharp points"
+        }
+      },
+      "dlm__group_reads_as__tall_metal_electrical_cabinets_along_the_right": {
+        "type": "choice",
+        "instructions": "As a whole, how do the tall metal electrical cabinets along the right wall in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "dlm__group_reads_as__row_of_control_consoles_on_the_back_wall": {
+        "type": "choice",
+        "instructions": "As a whole, how do the row of control consoles on the back wall in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "dlm__glow_clutter": {
+        "type": "noul",
+        "instructions": "Do the highlights, glows and small bright spots in `scene` look scattered and noisy?",
+        "criteria": {
+          "true": "Bright spots are sprinkled everywhere and compete with each other",
+          "false": "The lighting effects stay organized and support the mood"
+        }
+      },
+      "dlm__highlights_compete_subject": {
+        "type": "noul",
+        "instructions": "Do highlights far away from the control room with consoles at the far end of the corridor in `scene` pull the eye away from the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "A bright area away from the control room with consoles at the far end of the corridor is as eye-catching as the control room with consoles at the far end of the corridor",
+          "false": "Bright accents near the control room with consoles at the far end of the corridor frame it, and highlights elsewhere stay secondary"
+        }
+      },
+      "dlm__lopsided": {
+        "type": "noul",
+        "instructions": "Does `scene` feel lopsided, as if one side is much heavier than the other?",
+        "criteria": {
+          "true": "The image seems to tip toward one side",
+          "false": "The weights on each side feel held together"
+        }
+      },
+      "dlm__half_holds_eye__left": {
+        "type": "noul",
+        "instructions": "Does this part of an image, 756c3153-left, contain something that holds the viewer's attention?",
+        "criteria": {
+          "true": "There is a clear point of interest in this part",
+          "false": "This part is a monotonous stretch with nothing to rest the eye on"
+        }
+      },
+      "dlm__half_holds_eye__right": {
+        "type": "noul",
+        "instructions": "Does this part of an image, 756c3153-right, contain something that holds the viewer's attention?",
+        "criteria": {
+          "true": "There is a clear point of interest in this part",
+          "false": "This part is a monotonous stretch with nothing to rest the eye on"
+        }
+      },
+      "dlm__thumb_subject_visible": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 756c3153-thumb, is the control room with consoles at the far end of the corridor still easy to pick out?",
+        "criteria": {
+          "true": "The control room with consoles at the far end of the corridor is still a clear focal point at this size",
+          "false": "The control room with consoles at the far end of the corridor dissolves into its surroundings at this size"
+        }
+      },
+      "dlm__thumb_group_visible__tall_metal_electrical_cabinets_along_the_right": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 756c3153-thumb, can the tall metal electrical cabinets along the right wall still be seen as a group?",
+        "criteria": {
+          "true": "The tall metal electrical cabinets along the right wall are still readable as one group",
+          "false": "The tall metal electrical cabinets along the right wall turn into noise or disappear"
+        }
+      },
+      "dlm__thumb_group_visible__row_of_control_consoles_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 756c3153-thumb, can the row of control consoles on the back wall still be seen as a group?",
+        "criteria": {
+          "true": "The row of control consoles on the back wall are still readable as one group",
+          "false": "The row of control consoles on the back wall turn into noise or disappear"
+        }
+      },
+      "present__red_stripe_painted_along_the_walls": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the red stripe painted along the walls?",
+        "criteria": {
+          "true": "The red stripe painted along the walls can be found in the image",
+          "false": "Nothing in the image matches the red stripe painted along the walls"
+        }
+      },
+      "present__yellow_and_black_hazard_stripes_along_the_floor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the yellow and black hazard stripes along the floor edges?",
+        "criteria": {
+          "true": "The yellow and black hazard stripes along the floor edges can be found in the image",
+          "false": "Nothing in the image matches the yellow and black hazard stripes along the floor edges"
+        }
+      },
+      "present__ceiling_edges_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the ceiling edges of the corridor?",
+        "criteria": {
+          "true": "The ceiling edges of the corridor can be found in the image",
+          "false": "Nothing in the image matches the ceiling edges of the corridor"
+        }
+      },
+      "present__control_room_with_consoles_at_the_far_end_of_the": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the control room with consoles at the far end of the corridor?",
+        "criteria": {
+          "true": "The control room with consoles at the far end of the corridor can be found in the image",
+          "false": "Nothing in the image matches the control room with consoles at the far end of the corridor"
+        }
+      },
+      "present__warning_signs_and_painted_labels_on_the_walls": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the warning signs and painted labels on the walls?",
+        "criteria": {
+          "true": "The warning signs and painted labels on the walls can be found in the image",
+          "false": "Nothing in the image matches the warning signs and painted labels on the walls"
+        }
+      },
+      "present__bright_ceiling_lights": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the bright ceiling lights?",
+        "criteria": {
+          "true": "The bright ceiling lights can be found in the image",
+          "false": "Nothing in the image matches the bright ceiling lights"
+        }
+      },
+      "present__large_concrete_pillar_on_the_left": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the large concrete pillar on the left?",
+        "criteria": {
+          "true": "The large concrete pillar on the left can be found in the image",
+          "false": "Nothing in the image matches the large concrete pillar on the left"
+        }
+      },
+      "present__red_painted_corridor_floor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the red painted corridor floor?",
+        "criteria": {
+          "true": "The red painted corridor floor can be found in the image",
+          "false": "Nothing in the image matches the red painted corridor floor"
+        }
+      },
+      "present__curved_ceiling_of_the_corridor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the curved ceiling of the corridor?",
+        "criteria": {
+          "true": "The curved ceiling of the corridor can be found in the image",
+          "false": "Nothing in the image matches the curved ceiling of the corridor"
+        }
+      },
+      "present__tall_metal_electrical_cabinets_along_the_right": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the tall metal electrical cabinets along the right wall?",
+        "criteria": {
+          "true": "The tall metal electrical cabinets along the right wall can be found in the image",
+          "false": "Nothing in the image matches the tall metal electrical cabinets along the right wall"
+        }
+      },
+      "present__row_of_control_consoles_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the row of control consoles on the back wall?",
+        "criteria": {
+          "true": "The row of control consoles on the back wall can be found in the image",
+          "false": "Nothing in the image matches the row of control consoles on the back wall"
+        }
+      }
+    }
+  },
+  "images": {
+    "img-scene": [
+      1568,
+      666
+    ],
+    "img-thumb": [
+      659,
+      280
+    ],
+    "img-left": [
+      784,
+      666
+    ],
+    "img-right": [
+      784,
+      666
+    ]
+  },
+  "refs": []
+}

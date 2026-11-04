@@ -1,0 +1,482 @@
+{
+  "request": {
+    "model": "jev-latest",
+    "state": {
+      "scene": "80c457da-scene",
+      "notes": "The white silhouette figure in the center is a scale reference and is excluded from artistic evaluation. Text on walls (Cyrillic and Chinese) serves as environmental storytelling/texture."
+    },
+    "assets": {
+      "80c457da-scene": {
+        "type": "image",
+        "part": "img-scene"
+      },
+      "80c457da-thumb": {
+        "type": "image",
+        "part": "img-thumb"
+      },
+      "80c457da-left": {
+        "type": "image",
+        "part": "img-left"
+      },
+      "80c457da-right": {
+        "type": "image",
+        "part": "img-right"
+      }
+    },
+    "questions": {
+      "dlm__line_visible_full__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the yellow safety lines painted on the floor clearly visible?",
+        "criteria": {
+          "true": "The yellow safety lines painted on the floor can be seen without searching for it",
+          "false": "The yellow safety lines painted on the floor is so faint or small that it is easy to miss"
+        }
+      },
+      "dlm__line_visible_full__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the pipes and conduits running along the ceiling clearly visible?",
+        "criteria": {
+          "true": "The pipes and conduits running along the ceiling can be seen without searching for it",
+          "false": "The pipes and conduits running along the ceiling is so faint or small that it is easy to miss"
+        }
+      },
+      "dlm__dominant_form": {
+        "type": "choice",
+        "instructions": "What mainly organizes the composition of `scene`?",
+        "criteria": {
+          "small_separate_spots": "Many small separate spots, highlights or figures carry the image",
+          "long_directional_lines": "Long directional strokes, edges and stripes carry the image",
+          "large_areas_of_shape": "Large areas of color and shape carry the image",
+          "mixed_balance": "Spots, lines and large areas each play a clearly visible part"
+        }
+      },
+      "dlm__levels_distinct": {
+        "type": "noul",
+        "instructions": "Do some elements in `scene` look clearly more prominent than the rest?",
+        "criteria": {
+          "true": "There are visible levels: a few prominent elements and many quieter ones",
+          "false": "All elements look about equally large and strong"
+        }
+      },
+      "dlm__first_noticed": {
+        "type": "choice",
+        "instructions": "Which part of `scene` does the eye land on first?",
+        "criteria": {
+          "central_corridor_leading_to_the_back_control": "the central corridor leading to the back control room",
+          "row_of_tall_metal_electrical_cabinets": "the row of tall metal electrical cabinets",
+          "array_of_control_panels_and_monitors": "the array of control panels and monitors",
+          "yellow_safety_lines_painted_on_the_floor": "the yellow safety lines painted on the floor",
+          "pipes_and_conduits_running_along_the_ceiling": "the pipes and conduits running along the ceiling",
+          "large_concrete_pillar_with_red_stripes_and": "the large concrete pillar with red stripes and graphics",
+          "red_painted_floor_zone": "the red painted floor zone",
+          "grey_concrete_ceiling_surface": "the grey concrete ceiling surface"
+        }
+      },
+      "dlm__subject_stands_out": {
+        "type": "noul",
+        "instructions": "Does the central corridor leading to the back control room stand out clearly from its surroundings in `scene`?",
+        "criteria": {
+          "true": "The central corridor leading to the back control room is easy to find at a glance",
+          "false": "The central corridor leading to the back control room blends into its surroundings"
+        }
+      },
+      "dlm__points_equally_loud__rectangular_ceiling_light_fixtures": {
+        "type": "noul",
+        "instructions": "Are all of the rectangular ceiling light fixtures in `scene` about equally eye-catching?",
+        "criteria": {
+          "true": "None of them stands out, so the eye jumps from one to another",
+          "false": "Some of them are clearly stronger, or they form readable clusters"
+        }
+      },
+      "dlm__points_equally_loud__small_indicator_lights_and_switches_on_the": {
+        "type": "noul",
+        "instructions": "Are all of the small indicator lights and switches on the control panels in `scene` about equally eye-catching?",
+        "criteria": {
+          "true": "None of them stands out, so the eye jumps from one to another",
+          "false": "Some of them are clearly stronger, or they form readable clusters"
+        }
+      },
+      "dlm__points_equally_loud__yellow_triangular_warning_signs": {
+        "type": "noul",
+        "instructions": "Are all of the yellow triangular warning signs in `scene` about equally eye-catching?",
+        "criteria": {
+          "true": "None of them stands out, so the eye jumps from one to another",
+          "false": "Some of them are clearly stronger, or they form readable clusters"
+        }
+      },
+      "dlm__points_pull_from_subject__rectangular_ceiling_light_fixtures": {
+        "type": "noul",
+        "instructions": "Do the rectangular ceiling light fixtures in `scene` pull the eye away from the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "The eye keeps going to the rectangular ceiling light fixtures instead of the central corridor leading to the back control room",
+          "false": "The rectangular ceiling light fixtures stay in a supporting role"
+        }
+      },
+      "dlm__points_pull_from_subject__small_indicator_lights_and_switches_on_the": {
+        "type": "noul",
+        "instructions": "Do the small indicator lights and switches on the control panels in `scene` pull the eye away from the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "The eye keeps going to the small indicator lights and switches on the control panels instead of the central corridor leading to the back control room",
+          "false": "The small indicator lights and switches on the control panels stay in a supporting role"
+        }
+      },
+      "dlm__points_pull_from_subject__yellow_triangular_warning_signs": {
+        "type": "noul",
+        "instructions": "Do the yellow triangular warning signs in `scene` pull the eye away from the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "The eye keeps going to the yellow triangular warning signs instead of the central corridor leading to the back control room",
+          "false": "The yellow triangular warning signs stay in a supporting role"
+        }
+      },
+      "dlm__line_path_continuous__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Can the eye follow the yellow safety lines painted on the floor in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "dlm__line_path_continuous__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Can the eye follow the pipes and conduits running along the ceiling in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "dlm__line_leads_to_subject__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Does following the yellow safety lines painted on the floor in `scene` bring the eye to the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "The yellow safety lines painted on the floor points at, frames or converges near the central corridor leading to the back control room",
+          "false": "The yellow safety lines painted on the floor leads off toward an edge or an empty area"
+        }
+      },
+      "dlm__line_leads_to_subject__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Does following the pipes and conduits running along the ceiling in `scene` bring the eye to the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "The pipes and conduits running along the ceiling points at, frames or converges near the central corridor leading to the back control room",
+          "false": "The pipes and conduits running along the ceiling leads off toward an edge or an empty area"
+        }
+      },
+      "dlm__line_spans_far__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Does the yellow safety lines painted on the floor stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The yellow safety lines painted on the floor covers a long distance across the image",
+          "false": "The yellow safety lines painted on the floor is short compared with the image"
+        }
+      },
+      "dlm__line_spans_far__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Does the pipes and conduits running along the ceiling stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The pipes and conduits running along the ceiling covers a long distance across the image",
+          "false": "The pipes and conduits running along the ceiling is short compared with the image"
+        }
+      },
+      "dlm__line_contrast__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Does the yellow safety lines painted on the floor stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The yellow safety lines painted on the floor has strong contrast with its background",
+          "false": "The yellow safety lines painted on the floor is close in tone and color to its background"
+        }
+      },
+      "dlm__line_contrast__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Does the pipes and conduits running along the ceiling stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The pipes and conduits running along the ceiling has strong contrast with its background",
+          "false": "The pipes and conduits running along the ceiling is close in tone and color to its background"
+        }
+      },
+      "dlm__line_reads_as_band__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Is the yellow safety lines painted on the floor in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "dlm__line_reads_as_band__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Is the pipes and conduits running along the ceiling in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "dlm__area_shape_clear__large_concrete_pillar_with_red_stripes_and": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the large concrete pillar with red stripes and graphics easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the large concrete pillar with red stripes and graphics begins and ends"
+        }
+      },
+      "dlm__area_shape_clear__red_painted_floor_zone": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the red painted floor zone easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the red painted floor zone begins and ends"
+        }
+      },
+      "dlm__area_shape_clear__grey_concrete_ceiling_surface": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the grey concrete ceiling surface easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the grey concrete ceiling surface begins and ends"
+        }
+      },
+      "dlm__area_broken_up__large_concrete_pillar_with_red_stripes_and": {
+        "type": "noul",
+        "instructions": "Is the large concrete pillar with red stripes and graphics in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "dlm__area_broken_up__red_painted_floor_zone": {
+        "type": "noul",
+        "instructions": "Is the red painted floor zone in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "dlm__area_broken_up__grey_concrete_ceiling_surface": {
+        "type": "noul",
+        "instructions": "Is the grey concrete ceiling surface in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "dlm__shapes_merge": {
+        "type": "noul",
+        "instructions": "In `scene`, do neighboring shapes touch or overlap so that it is hard to tell them apart?",
+        "criteria": {
+          "true": "Some shapes stick together and their boundaries are unclear",
+          "false": "Neighboring shapes stay distinct"
+        }
+      },
+      "dlm__distracting_gaps": {
+        "type": "noul",
+        "instructions": "Are there small eye-catching gaps or slivers of background between shapes in `scene`?",
+        "criteria": {
+          "true": "Thin awkward gaps or holes between shapes catch the eye",
+          "false": "The spaces between shapes are calm or clearly shaped"
+        }
+      },
+      "dlm__subject_outline_readable": {
+        "type": "noul",
+        "instructions": "Is the outline of the central corridor leading to the back control room easy to read against the background in `scene`?",
+        "criteria": {
+          "true": "The silhouette of the central corridor leading to the back control room separates clearly from what is behind it",
+          "false": "The silhouette of the central corridor leading to the back control room dissolves into the background"
+        }
+      },
+      "dlm__subject_outline_noisy": {
+        "type": "noul",
+        "instructions": "Is the outline of the central corridor leading to the back control room in `scene` broken up by many small random notches and bumps?",
+        "criteria": {
+          "true": "The outline looks ragged everywhere, with no clear long curves or key points",
+          "false": "The outline has clear long curves or a few deliberate sharp points"
+        }
+      },
+      "dlm__group_reads_as__row_of_tall_metal_electrical_cabinets": {
+        "type": "choice",
+        "instructions": "As a whole, how do the row of tall metal electrical cabinets in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "dlm__group_reads_as__array_of_control_panels_and_monitors": {
+        "type": "choice",
+        "instructions": "As a whole, how do the array of control panels and monitors in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "dlm__glow_clutter": {
+        "type": "noul",
+        "instructions": "Do the highlights, glows and small bright spots in `scene` look scattered and noisy?",
+        "criteria": {
+          "true": "Bright spots are sprinkled everywhere and compete with each other",
+          "false": "The lighting effects stay organized and support the mood"
+        }
+      },
+      "dlm__highlights_compete_subject": {
+        "type": "noul",
+        "instructions": "Do highlights far away from the central corridor leading to the back control room in `scene` pull the eye away from the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "A bright area away from the central corridor leading to the back control room is as eye-catching as the central corridor leading to the back control room",
+          "false": "Bright accents near the central corridor leading to the back control room frame it, and highlights elsewhere stay secondary"
+        }
+      },
+      "dlm__lopsided": {
+        "type": "noul",
+        "instructions": "Does `scene` feel lopsided, as if one side is much heavier than the other?",
+        "criteria": {
+          "true": "The image seems to tip toward one side",
+          "false": "The weights on each side feel held together"
+        }
+      },
+      "dlm__half_holds_eye__left": {
+        "type": "noul",
+        "instructions": "Does this part of an image, 80c457da-left, contain something that holds the viewer's attention?",
+        "criteria": {
+          "true": "There is a clear point of interest in this part",
+          "false": "This part is a monotonous stretch with nothing to rest the eye on"
+        }
+      },
+      "dlm__half_holds_eye__right": {
+        "type": "noul",
+        "instructions": "Does this part of an image, 80c457da-right, contain something that holds the viewer's attention?",
+        "criteria": {
+          "true": "There is a clear point of interest in this part",
+          "false": "This part is a monotonous stretch with nothing to rest the eye on"
+        }
+      },
+      "dlm__thumb_subject_visible": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 80c457da-thumb, is the central corridor leading to the back control room still easy to pick out?",
+        "criteria": {
+          "true": "The central corridor leading to the back control room is still a clear focal point at this size",
+          "false": "The central corridor leading to the back control room dissolves into its surroundings at this size"
+        }
+      },
+      "dlm__thumb_group_visible__row_of_tall_metal_electrical_cabinets": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 80c457da-thumb, can the row of tall metal electrical cabinets still be seen as a group?",
+        "criteria": {
+          "true": "The row of tall metal electrical cabinets are still readable as one group",
+          "false": "The row of tall metal electrical cabinets turn into noise or disappear"
+        }
+      },
+      "dlm__thumb_group_visible__array_of_control_panels_and_monitors": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 80c457da-thumb, can the array of control panels and monitors still be seen as a group?",
+        "criteria": {
+          "true": "The array of control panels and monitors are still readable as one group",
+          "false": "The array of control panels and monitors turn into noise or disappear"
+        }
+      },
+      "present__yellow_safety_lines_painted_on_the_floor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the yellow safety lines painted on the floor?",
+        "criteria": {
+          "true": "The yellow safety lines painted on the floor can be found in the image",
+          "false": "Nothing in the image matches the yellow safety lines painted on the floor"
+        }
+      },
+      "present__pipes_and_conduits_running_along_the_ceiling": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the pipes and conduits running along the ceiling?",
+        "criteria": {
+          "true": "The pipes and conduits running along the ceiling can be found in the image",
+          "false": "Nothing in the image matches the pipes and conduits running along the ceiling"
+        }
+      },
+      "present__central_corridor_leading_to_the_back_control": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the central corridor leading to the back control room?",
+        "criteria": {
+          "true": "The central corridor leading to the back control room can be found in the image",
+          "false": "Nothing in the image matches the central corridor leading to the back control room"
+        }
+      },
+      "present__rectangular_ceiling_light_fixtures": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the rectangular ceiling light fixtures?",
+        "criteria": {
+          "true": "The rectangular ceiling light fixtures can be found in the image",
+          "false": "Nothing in the image matches the rectangular ceiling light fixtures"
+        }
+      },
+      "present__small_indicator_lights_and_switches_on_the": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the small indicator lights and switches on the control panels?",
+        "criteria": {
+          "true": "The small indicator lights and switches on the control panels can be found in the image",
+          "false": "Nothing in the image matches the small indicator lights and switches on the control panels"
+        }
+      },
+      "present__yellow_triangular_warning_signs": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the yellow triangular warning signs?",
+        "criteria": {
+          "true": "The yellow triangular warning signs can be found in the image",
+          "false": "Nothing in the image matches the yellow triangular warning signs"
+        }
+      },
+      "present__large_concrete_pillar_with_red_stripes_and": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the large concrete pillar with red stripes and graphics?",
+        "criteria": {
+          "true": "The large concrete pillar with red stripes and graphics can be found in the image",
+          "false": "Nothing in the image matches the large concrete pillar with red stripes and graphics"
+        }
+      },
+      "present__red_painted_floor_zone": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the red painted floor zone?",
+        "criteria": {
+          "true": "The red painted floor zone can be found in the image",
+          "false": "Nothing in the image matches the red painted floor zone"
+        }
+      },
+      "present__grey_concrete_ceiling_surface": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the grey concrete ceiling surface?",
+        "criteria": {
+          "true": "The grey concrete ceiling surface can be found in the image",
+          "false": "Nothing in the image matches the grey concrete ceiling surface"
+        }
+      },
+      "present__row_of_tall_metal_electrical_cabinets": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the row of tall metal electrical cabinets?",
+        "criteria": {
+          "true": "The row of tall metal electrical cabinets can be found in the image",
+          "false": "Nothing in the image matches the row of tall metal electrical cabinets"
+        }
+      },
+      "present__array_of_control_panels_and_monitors": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the array of control panels and monitors?",
+        "criteria": {
+          "true": "The array of control panels and monitors can be found in the image",
+          "false": "Nothing in the image matches the array of control panels and monitors"
+        }
+      }
+    }
+  },
+  "images": {
+    "img-scene": [
+      1568,
+      666
+    ],
+    "img-thumb": [
+      659,
+      280
+    ],
+    "img-left": [
+      784,
+      666
+    ],
+    "img-right": [
+      784,
+      666
+    ]
+  },
+  "refs": []
+}

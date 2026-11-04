@@ -1,0 +1,251 @@
+{
+  "model": "jev-1.14.0",
+  "answers": {
+    "dlm__line_visible_full__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "dlm__line_visible_full__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "dlm__dominant_form": {
+      "type": "choice",
+      "choice": "long_directional_lines",
+      "confidence": 0.63,
+      "probabilities": {
+        "small_separate_spots": 0.0,
+        "long_directional_lines": 0.72,
+        "large_areas_of_shape": 0.13,
+        "mixed_balance": 0.15
+      }
+    },
+    "dlm__levels_distinct": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "dlm__first_noticed": {
+      "type": "choice",
+      "choice": "central_corridor_leading_to_the_back_control",
+      "confidence": 0.45,
+      "probabilities": {
+        "central_corridor_leading_to_the_back_control": 0.52,
+        "row_of_tall_metal_electrical_cabinets": 0.03,
+        "array_of_control_panels_and_monitors": 0.03,
+        "yellow_safety_lines_painted_on_the_floor": 0.01,
+        "pipes_and_conduits_running_along_the_ceiling": 0.0,
+        "large_concrete_pillar_with_red_stripes_and": 0.17,
+        "red_painted_floor_zone": 0.24,
+        "grey_concrete_ceiling_surface": 0.0
+      }
+    },
+    "dlm__subject_stands_out": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "dlm__points_equally_loud__rectangular_ceiling_light_fixtures": {
+      "type": "noul",
+      "noul": 0.09
+    },
+    "dlm__points_equally_loud__small_indicator_lights_and_switches_on_the": {
+      "type": "noul",
+      "noul": 0.22
+    },
+    "dlm__points_equally_loud__yellow_triangular_warning_signs": {
+      "type": "noul",
+      "noul": 0.14
+    },
+    "dlm__points_pull_from_subject__rectangular_ceiling_light_fixtures": {
+      "type": "noul",
+      "noul": 0.16
+    },
+    "dlm__points_pull_from_subject__small_indicator_lights_and_switches_on_the": {
+      "type": "noul",
+      "noul": 0.19
+    },
+    "dlm__points_pull_from_subject__yellow_triangular_warning_signs": {
+      "type": "noul",
+      "noul": 0.17
+    },
+    "dlm__line_path_continuous__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.33
+    },
+    "dlm__line_path_continuous__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "dlm__line_leads_to_subject__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "dlm__line_leads_to_subject__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "dlm__line_spans_far__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "dlm__line_spans_far__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "dlm__line_contrast__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "dlm__line_contrast__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "dlm__line_reads_as_band__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.23
+    },
+    "dlm__line_reads_as_band__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.13
+    },
+    "dlm__area_shape_clear__large_concrete_pillar_with_red_stripes_and": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "dlm__area_shape_clear__red_painted_floor_zone": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "dlm__area_shape_clear__grey_concrete_ceiling_surface": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "dlm__area_broken_up__large_concrete_pillar_with_red_stripes_and": {
+      "type": "noul",
+      "noul": 0.09
+    },
+    "dlm__area_broken_up__red_painted_floor_zone": {
+      "type": "noul",
+      "noul": 0.1
+    },
+    "dlm__area_broken_up__grey_concrete_ceiling_surface": {
+      "type": "noul",
+      "noul": 0.21
+    },
+    "dlm__shapes_merge": {
+      "type": "noul",
+      "noul": 0.27
+    },
+    "dlm__distracting_gaps": {
+      "type": "noul",
+      "noul": 0.34
+    },
+    "dlm__subject_outline_readable": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "dlm__subject_outline_noisy": {
+      "type": "noul",
+      "noul": 0.1
+    },
+    "dlm__group_reads_as__row_of_tall_metal_electrical_cabinets": {
+      "type": "choice",
+      "choice": "one_continuous_path",
+      "confidence": 0.64,
+      "probabilities": {
+        "separate_items": 0.08,
+        "one_continuous_path": 0.76,
+        "one_filled_area": 0.16
+      }
+    },
+    "dlm__group_reads_as__array_of_control_panels_and_monitors": {
+      "type": "choice",
+      "choice": "one_continuous_path",
+      "confidence": 0.2,
+      "probabilities": {
+        "separate_items": 0.19,
+        "one_continuous_path": 0.47,
+        "one_filled_area": 0.34
+      }
+    },
+    "dlm__glow_clutter": {
+      "type": "noul",
+      "noul": 0.09
+    },
+    "dlm__highlights_compete_subject": {
+      "type": "noul",
+      "noul": 0.14
+    },
+    "dlm__lopsided": {
+      "type": "noul",
+      "noul": 0.44
+    },
+    "dlm__half_holds_eye__left": {
+      "type": "noul",
+      "noul": 0.73
+    },
+    "dlm__half_holds_eye__right": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "dlm__thumb_subject_visible": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "dlm__thumb_group_visible__row_of_tall_metal_electrical_cabinets": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "dlm__thumb_group_visible__array_of_control_panels_and_monitors": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "present__yellow_safety_lines_painted_on_the_floor": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__pipes_and_conduits_running_along_the_ceiling": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "present__central_corridor_leading_to_the_back_control": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "present__rectangular_ceiling_light_fixtures": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "present__small_indicator_lights_and_switches_on_the": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "present__yellow_triangular_warning_signs": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__large_concrete_pillar_with_red_stripes_and": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "present__red_painted_floor_zone": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__grey_concrete_ceiling_surface": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "present__row_of_tall_metal_electrical_cabinets": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "present__array_of_control_panels_and_monitors": {
+      "type": "noul",
+      "noul": 0.94
+    }
+  },
+  "usage": {
+    "input_tokens": 11237,
+    "output_tokens": 1740
+  }
+}

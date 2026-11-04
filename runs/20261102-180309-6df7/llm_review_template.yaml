@@ -1,0 +1,28 @@
+# 第四步：大模型复核结果。复制为 llm_review.yaml 后填写。
+# resolutions：每个“存疑”条目必须给出 verdict（合格/不合格）和 reason
+# overrides：推翻 Jev 已判合格或不合格的条目，例如 dlm.D13: {verdict: 合格, reason: ...}
+# issues：合并同因后的修改项，按 priority 从 1 开始排序；kb 填 basic 或 project（冲突时以 project 为准）
+case: 20261102-180309-6df7
+reviewer: null
+resolutions:
+  dlm.D04:
+    verdict: null
+    reason: null
+  dlm.D10:
+    verdict: null
+    reason: null
+  dlm.D15:
+    verdict: null
+    reason: null
+overrides: {}
+issues:
+- priority: 1
+  clauses: []
+  kb: basic
+  target: null
+  location: null
+  problem: null
+  action: null
+  expected: null
+keep: []
+notes: null

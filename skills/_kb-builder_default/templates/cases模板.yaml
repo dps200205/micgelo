@@ -1,0 +1,12 @@
+# 知识块图片登记表模板
+images:
+  - id: ref_包点纹饰
+    file: images/ref_包点纹饰.png
+    role: reference            # 参考图：被 questions.yaml 的 refs 引用，会发给 Jev
+    desc: 包点固定纹饰的标准样式，正面、无透视、背景干净
+  - id: ex_P01_缺少纹饰
+    file: images/ex_P01_缺少纹饰.jpg
+    role: example              # 案例图：条目出问题时附给大模型参考
+    clauses: [P01]
+    label: 不合格              # 合格 | 不合格
+    note: B 包点地面没有纹饰

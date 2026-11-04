@@ -1,0 +1,32 @@
+# 问题库模板（项目规则 + 参考图比对示例）
+# 由评审标准编译生成；字段含义见样板 场景美术基础知识库/平面构成/场景概念设计中的点线面/questions.yaml
+
+block: bomb_props
+source: 01物件摆放规范.md
+source_version: "1.0"          # 必须与评审标准头信息中的 version 一致
+
+# 本块额外用到的场景元素槽位：场景解析时会要求列出这些元素
+slots:
+  lists: [bombsites]           # 例：图中的每个包点，逐个检查
+
+# 参考图：问题中用 {ref:名称} 引用，评审时随请求发给 Jev
+refs:
+  bombsite_emblem:
+    file: images/ref_包点纹饰.png
+    desc: "the fixed bomb-site emblem"   # 英文短描述，便于报告阅读
+
+observations:
+  emblem_at_site:
+    type: noul
+    over: bombsites
+    q: "Does {item} in `scene` carry the emblem shown in {ref:bombsite_emblem}?"
+    criteria:
+      true: "The same emblem design is visible at {item}, even if worn or seen in perspective"
+      false: "{item} has no emblem, or a different design"
+
+clauses:
+  P01:
+    title: 每个包点都有固定纹饰
+    applies_if: [scene.bombsites]          # 场景解析列出了包点才评；没有包点则“不适用”
+    checks:
+      - {obs: emblem_at_site, good: true, aggregate: worst, point: 1}

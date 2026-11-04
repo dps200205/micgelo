@@ -1,0 +1,16 @@
+image: image.jpg
+user_input: 这是一张pvp爆破场景概念设计图
+image_understanding: 一张带有苏式工业风格的室内场景概念图，包含混凝土墙体、配电柜、红色地面标识及墙面标语，中央有一个白色人物剪影作为比例参考。
+image_type: 项目知识库/01_局内场景/01_PVP场景/01_常规爆破地图
+purpose: PVP爆破模式场景概念设计
+subject_hint: 工业风室内通道/控制室区域
+goal: hierarchy
+dominant_form_target: null
+balance_target: none
+view_size: null
+scene_notes: The white silhouette figure in the center is a scale reference and is
+  excluded from aesthetic evaluation. Text on walls (Cyrillic and Chinese) serves
+  as texture/detail.
+assumptions:
+- 推断评审目标为检查场景的视觉层级和构成有效性
+- 推断该场景用于常规爆破模式的某个区域（如包点或连接通道）

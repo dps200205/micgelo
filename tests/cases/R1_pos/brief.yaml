@@ -1,0 +1,4 @@
+image: image.jpg
+user_input: 参考图比对测试：含纹饰的原图
+goal: hierarchy
+balance_target: none
