@@ -1,0 +1,650 @@
+{
+  "request": {
+    "model": "jev-latest",
+    "state": {
+      "scene": "8dba464f-scene"
+    },
+    "assets": {
+      "8dba464f-right": {
+        "type": "image",
+        "part": "img-right"
+      },
+      "8dba464f-thumb": {
+        "type": "image",
+        "part": "img-thumb"
+      },
+      "8dba464f-scene": {
+        "type": "image",
+        "part": "img-scene"
+      },
+      "8dba464f-left": {
+        "type": "image",
+        "part": "img-left"
+      }
+    },
+    "questions": {
+      "abrupt_density_jump": {
+        "type": "noul",
+        "instructions": "Does `scene` have a sudden, awkward jump from a crowded area to an empty area?",
+        "criteria": {
+          "true": "Density changes abruptly in a way that breaks the flow",
+          "false": "Changes in density feel gradual or clearly deliberate"
+        }
+      },
+      "area_broken_up__dark_blue_back_wall": {
+        "type": "noul",
+        "instructions": "Is the dark blue back wall in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "area_broken_up__tiled_stage_floor": {
+        "type": "noul",
+        "instructions": "Is the tiled stage floor in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "area_broken_up__reflective_blue_area_on_the_right_side_of_the": {
+        "type": "noul",
+        "instructions": "Is the reflective blue area on the right side of the floor in `scene` broken into many small fragments by highlights, shadows or texture?",
+        "criteria": {
+          "true": "Small bright and dark pieces chop it up so it no longer reads as one area",
+          "false": "Its surface detail stays inside one readable area"
+        }
+      },
+      "area_shape_clear__dark_blue_back_wall": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the dark blue back wall easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the dark blue back wall begins and ends"
+        }
+      },
+      "area_shape_clear__tiled_stage_floor": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the tiled stage floor easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the tiled stage floor begins and ends"
+        }
+      },
+      "area_shape_clear__reflective_blue_area_on_the_right_side_of_the": {
+        "type": "noul",
+        "instructions": "In `scene`, is the overall shape of the reflective blue area on the right side of the floor easy to see?",
+        "criteria": {
+          "true": "Its extent and outline can be read as one shape",
+          "false": "It is hard to tell where the reflective blue area on the right side of the floor begins and ends"
+        }
+      },
+      "busy_area_beats_subject": {
+        "type": "noul",
+        "instructions": "Is there a busy, detailed area in `scene`, other than the golden statue of soldiers on the pedestal, that draws more attention than the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "Some dense area elsewhere wins the viewer's attention",
+          "false": "Dense areas elsewhere stay secondary to the golden statue of soldiers on the pedestal"
+        }
+      },
+      "dense_details_distinct__cluster_of_soldier_figures_in_the_statue": {
+        "type": "noul",
+        "instructions": "Within the cluster of soldier figures in the statue in `scene`, can the important individual shapes still be told apart?",
+        "criteria": {
+          "true": "Key figures, objects or outlines inside it are recognizable",
+          "false": "Everything inside it merges into one lump"
+        }
+      },
+      "distracting_gaps": {
+        "type": "noul",
+        "instructions": "Are there small eye-catching gaps or slivers of background between shapes in `scene`?",
+        "criteria": {
+          "true": "Thin awkward gaps or holes between shapes catch the eye",
+          "false": "The spaces between shapes are calm or clearly shaped"
+        }
+      },
+      "dominant_form": {
+        "type": "choice",
+        "instructions": "What mainly organizes the composition of `scene`?",
+        "criteria": {
+          "small_separate_spots": "Many small separate spots, highlights or figures carry the image",
+          "long_directional_lines": "Long directional strokes, edges and stripes carry the image",
+          "large_areas_of_shape": "Large areas of color and shape carry the image",
+          "mixed_balance": "Spots, lines and large areas each play a clearly visible part"
+        }
+      },
+      "first_noticed": {
+        "type": "choice",
+        "instructions": "Which part of `scene` does the eye land on first?",
+        "criteria": {
+          "golden_statue_of_soldiers_on_the_pedestal": "the golden statue of soldiers on the pedestal",
+          "tall_glowing_vertical_panels_behind_the_statue": "the tall glowing vertical panels behind the statue",
+          "row_of_dark_human_silhouettes_along_the_back": "the row of dark human silhouettes along the back wall",
+          "large_glowing_pink_letters_on_the_back_wall": "the large glowing pink letters on the back wall",
+          "diagonal_spotlight_beams": "the diagonal spotlight beams",
+          "curved_bright_edge_of_the_stage_floor": "the curved bright edge of the stage floor",
+          "dark_blue_back_wall": "the dark blue back wall",
+          "tiled_stage_floor": "the tiled stage floor",
+          "reflective_blue_area_on_the_right_side_of_the": "the reflective blue area on the right side of the floor"
+        }
+      },
+      "glow_clutter": {
+        "type": "noul",
+        "instructions": "Do the highlights, glows and small bright spots in `scene` look scattered and noisy?",
+        "criteria": {
+          "true": "Bright spots are sprinkled everywhere and compete with each other",
+          "false": "The lighting effects stay organized and support the mood"
+        }
+      },
+      "group_merges_neighbor__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "Do the tall glowing vertical panels behind the statue in `scene` blend into nearby elements so that it is unclear where the group ends?",
+        "criteria": {
+          "true": "The edge of the group is lost among neighboring elements",
+          "false": "The group is clearly separated from its neighbors"
+        }
+      },
+      "group_merges_neighbor__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "Do the row of dark human silhouettes along the back wall in `scene` blend into nearby elements so that it is unclear where the group ends?",
+        "criteria": {
+          "true": "The edge of the group is lost among neighboring elements",
+          "false": "The group is clearly separated from its neighbors"
+        }
+      },
+      "group_merges_neighbor__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Do the large glowing pink letters on the back wall in `scene` blend into nearby elements so that it is unclear where the group ends?",
+        "criteria": {
+          "true": "The edge of the group is lost among neighboring elements",
+          "false": "The group is clearly separated from its neighbors"
+        }
+      },
+      "group_outliers__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "Do a few of the tall glowing vertical panels behind the statue in `scene` stick out from the rest so that the group's outline looks messy?",
+        "criteria": {
+          "true": "Stray members break the group's overall outline",
+          "false": "All members sit within the group's overall outline"
+        }
+      },
+      "group_outliers__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "Do a few of the row of dark human silhouettes along the back wall in `scene` stick out from the rest so that the group's outline looks messy?",
+        "criteria": {
+          "true": "Stray members break the group's overall outline",
+          "false": "All members sit within the group's overall outline"
+        }
+      },
+      "group_outliers__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Do a few of the large glowing pink letters on the back wall in `scene` stick out from the rest so that the group's outline looks messy?",
+        "criteria": {
+          "true": "Stray members break the group's overall outline",
+          "false": "All members sit within the group's overall outline"
+        }
+      },
+      "group_overpowers_subject__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "Do the tall glowing vertical panels behind the statue in `scene` look visually heavier than the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The tall glowing vertical panels behind the statue carry more visual weight than the golden statue of soldiers on the pedestal",
+          "false": "The golden statue of soldiers on the pedestal keeps more visual weight than the tall glowing vertical panels behind the statue"
+        }
+      },
+      "group_overpowers_subject__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "Do the row of dark human silhouettes along the back wall in `scene` look visually heavier than the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The row of dark human silhouettes along the back wall carry more visual weight than the golden statue of soldiers on the pedestal",
+          "false": "The golden statue of soldiers on the pedestal keeps more visual weight than the row of dark human silhouettes along the back wall"
+        }
+      },
+      "group_overpowers_subject__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Do the large glowing pink letters on the back wall in `scene` look visually heavier than the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The large glowing pink letters on the back wall carry more visual weight than the golden statue of soldiers on the pedestal",
+          "false": "The golden statue of soldiers on the pedestal keeps more visual weight than the large glowing pink letters on the back wall"
+        }
+      },
+      "group_reads_as__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "choice",
+        "instructions": "As a whole, how do the tall glowing vertical panels behind the statue in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "group_reads_as__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "choice",
+        "instructions": "As a whole, how do the row of dark human silhouettes along the back wall in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "group_reads_as__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "choice",
+        "instructions": "As a whole, how do the large glowing pink letters on the back wall in `scene` read?",
+        "criteria": {
+          "separate_items": "As separate individual items, each noticed on its own",
+          "one_continuous_path": "As one row or path that the eye follows",
+          "one_filled_area": "As one filled area or block"
+        }
+      },
+      "group_reads_as_one__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "Do the tall glowing vertical panels behind the statue in `scene` look like they belong together as one group?",
+        "criteria": {
+          "true": "They share a position, look or direction that ties them together",
+          "false": "They look like unrelated scattered pieces"
+        }
+      },
+      "group_reads_as_one__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "Do the row of dark human silhouettes along the back wall in `scene` look like they belong together as one group?",
+        "criteria": {
+          "true": "They share a position, look or direction that ties them together",
+          "false": "They look like unrelated scattered pieces"
+        }
+      },
+      "group_reads_as_one__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Do the large glowing pink letters on the back wall in `scene` look like they belong together as one group?",
+        "criteria": {
+          "true": "They share a position, look or direction that ties them together",
+          "false": "They look like unrelated scattered pieces"
+        }
+      },
+      "group_shape_clear__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "Taken as a whole, do the tall glowing vertical panels behind the statue in `scene` form an overall shape that is easy to see?",
+        "criteria": {
+          "true": "The group has a readable outline or main direction",
+          "false": "The group has no readable overall outline"
+        }
+      },
+      "group_shape_clear__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "Taken as a whole, do the row of dark human silhouettes along the back wall in `scene` form an overall shape that is easy to see?",
+        "criteria": {
+          "true": "The group has a readable outline or main direction",
+          "false": "The group has no readable overall outline"
+        }
+      },
+      "group_shape_clear__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Taken as a whole, do the large glowing pink letters on the back wall in `scene` form an overall shape that is easy to see?",
+        "criteria": {
+          "true": "The group has a readable outline or main direction",
+          "false": "The group has no readable overall outline"
+        }
+      },
+      "half_holds_eye__left": {
+        "type": "noul",
+        "instructions": "Does this part of an image, 8dba464f-left, contain something that holds the viewer's attention?",
+        "criteria": {
+          "true": "There is a clear point of interest in this part",
+          "false": "This part is a monotonous stretch with nothing to rest the eye on"
+        }
+      },
+      "half_holds_eye__right": {
+        "type": "noul",
+        "instructions": "Does this part of an image, 8dba464f-right, contain something that holds the viewer's attention?",
+        "criteria": {
+          "true": "There is a clear point of interest in this part",
+          "false": "This part is a monotonous stretch with nothing to rest the eye on"
+        }
+      },
+      "has_density_contrast": {
+        "type": "noul",
+        "instructions": "Does `scene` contain both a clearly busy area and clearly calmer areas?",
+        "criteria": {
+          "true": "One area is visibly denser and other areas are visibly quieter",
+          "false": "Every part of the image is about equally busy"
+        }
+      },
+      "has_rest_area": {
+        "type": "noul",
+        "instructions": "Is there an area in `scene` with little detail where the eye can rest?",
+        "criteria": {
+          "true": "Some area is calm enough to give the eye a pause",
+          "false": "Detail fills the whole image"
+        }
+      },
+      "highlights_compete_subject": {
+        "type": "noul",
+        "instructions": "Do highlights or glows away from the golden statue of soldiers on the pedestal pull the eye away from it in `scene`?",
+        "criteria": {
+          "true": "A bright area elsewhere is as eye-catching as the golden statue of soldiers on the pedestal",
+          "false": "The brightest accents support the golden statue of soldiers on the pedestal"
+        }
+      },
+      "levels_distinct": {
+        "type": "noul",
+        "instructions": "Do some elements in `scene` look clearly more prominent than the rest?",
+        "criteria": {
+          "true": "There are visible levels: a few prominent elements and many quieter ones",
+          "false": "All elements look about equally large and strong"
+        }
+      },
+      "line_contrast__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Does the diagonal spotlight beams stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The diagonal spotlight beams has strong contrast with its background",
+          "false": "The diagonal spotlight beams is close in tone and color to its background"
+        }
+      },
+      "line_contrast__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Does the curved bright edge of the stage floor stand out clearly against what is behind it in `scene`?",
+        "criteria": {
+          "true": "The curved bright edge of the stage floor has strong contrast with its background",
+          "false": "The curved bright edge of the stage floor is close in tone and color to its background"
+        }
+      },
+      "line_leads_to_subject__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Does following the diagonal spotlight beams in `scene` bring the eye to the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The diagonal spotlight beams points at, frames or converges near the golden statue of soldiers on the pedestal",
+          "false": "The diagonal spotlight beams leads off toward an edge or an empty area"
+        }
+      },
+      "line_leads_to_subject__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Does following the curved bright edge of the stage floor in `scene` bring the eye to the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The curved bright edge of the stage floor points at, frames or converges near the golden statue of soldiers on the pedestal",
+          "false": "The curved bright edge of the stage floor leads off toward an edge or an empty area"
+        }
+      },
+      "line_path_continuous__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Can the eye follow the diagonal spotlight beams in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "line_path_continuous__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Can the eye follow the curved bright edge of the stage floor in `scene` as one continuous path?",
+        "criteria": {
+          "true": "The path is easy to follow from start to end",
+          "false": "Breaks, crossings or tangles make the path get lost"
+        }
+      },
+      "line_reads_as_band__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Is the diagonal spotlight beams in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "line_reads_as_band__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Is the curved bright edge of the stage floor in `scene` so wide that it looks more like a flat area than a line?",
+        "criteria": {
+          "true": "Its width is as noticeable as its length",
+          "false": "It reads mainly as a direction or path"
+        }
+      },
+      "line_spans_far__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Does the diagonal spotlight beams stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The diagonal spotlight beams covers a long distance across the image",
+          "false": "The diagonal spotlight beams is short compared with the image"
+        }
+      },
+      "line_spans_far__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Does the curved bright edge of the stage floor stretch across at least half of `scene` in its main direction?",
+        "criteria": {
+          "true": "The curved bright edge of the stage floor covers a long distance across the image",
+          "false": "The curved bright edge of the stage floor is short compared with the image"
+        }
+      },
+      "line_visible_full__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the diagonal spotlight beams clearly visible?",
+        "criteria": {
+          "true": "The diagonal spotlight beams can be seen without searching for it",
+          "false": "The diagonal spotlight beams is so faint or small that it is easy to miss"
+        }
+      },
+      "line_visible_full__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Looking at the whole of `scene`, is the curved bright edge of the stage floor clearly visible?",
+        "criteria": {
+          "true": "The curved bright edge of the stage floor can be seen without searching for it",
+          "false": "The curved bright edge of the stage floor is so faint or small that it is easy to miss"
+        }
+      },
+      "lopsided": {
+        "type": "noul",
+        "instructions": "Does `scene` feel lopsided, as if one side is much heavier than the other?",
+        "criteria": {
+          "true": "The image seems to tip toward one side",
+          "false": "The weights on each side feel held together"
+        }
+      },
+      "points_equally_loud__small_stage_lamps_along_the_front_edge_of_the": {
+        "type": "noul",
+        "instructions": "Are all of the small stage lamps along the front edge of the stage in `scene` about equally eye-catching?",
+        "criteria": {
+          "true": "None of them stands out, so the eye jumps from one to another",
+          "false": "Some of them are clearly stronger, or they form readable clusters"
+        }
+      },
+      "points_pull_from_subject__small_stage_lamps_along_the_front_edge_of_the": {
+        "type": "noul",
+        "instructions": "Do the small stage lamps along the front edge of the stage in `scene` pull the eye away from the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The eye keeps going to the small stage lamps along the front edge of the stage instead of the golden statue of soldiers on the pedestal",
+          "false": "The small stage lamps along the front edge of the stage stay in a supporting role"
+        }
+      },
+      "shapes_merge": {
+        "type": "noul",
+        "instructions": "In `scene`, do neighboring shapes touch or overlap so that it is hard to tell them apart?",
+        "criteria": {
+          "true": "Some shapes stick together and their boundaries are unclear",
+          "false": "Neighboring shapes stay distinct"
+        }
+      },
+      "stray_elements": {
+        "type": "noul",
+        "instructions": "Are there small isolated elements in `scene` that belong to no group, no path and not to the main subject?",
+        "criteria": {
+          "true": "Some small elements float around without any visible relation",
+          "false": "Small elements belong to clear groups, rows or paths"
+        }
+      },
+      "stray_pull_from_subject": {
+        "type": "noul",
+        "instructions": "Do small isolated elements in `scene` pull the eye away from the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The eye keeps jumping to small loose elements",
+          "false": "Small loose elements, if any, stay quiet"
+        }
+      },
+      "subject_has_space": {
+        "type": "noul",
+        "instructions": "Is there enough calm space around the golden statue of soldiers on the pedestal in `scene` for it to be seen clearly?",
+        "criteria": {
+          "true": "The golden statue of soldiers on the pedestal has breathing room or a quiet backdrop",
+          "false": "The golden statue of soldiers on the pedestal is crowded by competing detail"
+        }
+      },
+      "subject_outline_noisy": {
+        "type": "noul",
+        "instructions": "Is the outline of the golden statue of soldiers on the pedestal in `scene` broken up by many small random notches and bumps?",
+        "criteria": {
+          "true": "The outline looks ragged everywhere, with no clear long curves or key points",
+          "false": "The outline has clear long curves or a few deliberate sharp points"
+        }
+      },
+      "subject_outline_readable": {
+        "type": "noul",
+        "instructions": "Is the outline of the golden statue of soldiers on the pedestal easy to read against the background in `scene`?",
+        "criteria": {
+          "true": "The silhouette of the golden statue of soldiers on the pedestal separates clearly from what is behind it",
+          "false": "The silhouette of the golden statue of soldiers on the pedestal dissolves into the background"
+        }
+      },
+      "subject_stands_out": {
+        "type": "noul",
+        "instructions": "Does the golden statue of soldiers on the pedestal stand out clearly from its surroundings in `scene`?",
+        "criteria": {
+          "true": "The golden statue of soldiers on the pedestal is easy to find at a glance",
+          "false": "The golden statue of soldiers on the pedestal blends into its surroundings"
+        }
+      },
+      "thumb_group_visible__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 8dba464f-thumb, can the tall glowing vertical panels behind the statue still be seen as a group?",
+        "criteria": {
+          "true": "The tall glowing vertical panels behind the statue are still readable as one group",
+          "false": "The tall glowing vertical panels behind the statue turn into noise or disappear"
+        }
+      },
+      "thumb_group_visible__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 8dba464f-thumb, can the row of dark human silhouettes along the back wall still be seen as a group?",
+        "criteria": {
+          "true": "The row of dark human silhouettes along the back wall are still readable as one group",
+          "false": "The row of dark human silhouettes along the back wall turn into noise or disappear"
+        }
+      },
+      "thumb_group_visible__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 8dba464f-thumb, can the large glowing pink letters on the back wall still be seen as a group?",
+        "criteria": {
+          "true": "The large glowing pink letters on the back wall are still readable as one group",
+          "false": "The large glowing pink letters on the back wall turn into noise or disappear"
+        }
+      },
+      "thumb_subject_visible": {
+        "type": "noul",
+        "instructions": "In this small version of the image, 8dba464f-thumb, is the golden statue of soldiers on the pedestal still easy to pick out?",
+        "criteria": {
+          "true": "The golden statue of soldiers on the pedestal is still a clear focal point at this size",
+          "false": "The golden statue of soldiers on the pedestal dissolves into its surroundings at this size"
+        }
+      },
+      "present__dark_blue_back_wall": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the dark blue back wall?",
+        "criteria": {
+          "true": "The dark blue back wall can be found in the image",
+          "false": "Nothing in the image matches the dark blue back wall"
+        }
+      },
+      "present__tiled_stage_floor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the tiled stage floor?",
+        "criteria": {
+          "true": "The tiled stage floor can be found in the image",
+          "false": "Nothing in the image matches the tiled stage floor"
+        }
+      },
+      "present__reflective_blue_area_on_the_right_side_of_the": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the reflective blue area on the right side of the floor?",
+        "criteria": {
+          "true": "The reflective blue area on the right side of the floor can be found in the image",
+          "false": "Nothing in the image matches the reflective blue area on the right side of the floor"
+        }
+      },
+      "present__golden_statue_of_soldiers_on_the_pedestal": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the golden statue of soldiers on the pedestal?",
+        "criteria": {
+          "true": "The golden statue of soldiers on the pedestal can be found in the image",
+          "false": "Nothing in the image matches the golden statue of soldiers on the pedestal"
+        }
+      },
+      "present__cluster_of_soldier_figures_in_the_statue": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the cluster of soldier figures in the statue?",
+        "criteria": {
+          "true": "The cluster of soldier figures in the statue can be found in the image",
+          "false": "Nothing in the image matches the cluster of soldier figures in the statue"
+        }
+      },
+      "present__tall_glowing_vertical_panels_behind_the_statue": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the tall glowing vertical panels behind the statue?",
+        "criteria": {
+          "true": "The tall glowing vertical panels behind the statue can be found in the image",
+          "false": "Nothing in the image matches the tall glowing vertical panels behind the statue"
+        }
+      },
+      "present__row_of_dark_human_silhouettes_along_the_back": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the row of dark human silhouettes along the back wall?",
+        "criteria": {
+          "true": "The row of dark human silhouettes along the back wall can be found in the image",
+          "false": "Nothing in the image matches the row of dark human silhouettes along the back wall"
+        }
+      },
+      "present__large_glowing_pink_letters_on_the_back_wall": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the large glowing pink letters on the back wall?",
+        "criteria": {
+          "true": "The large glowing pink letters on the back wall can be found in the image",
+          "false": "Nothing in the image matches the large glowing pink letters on the back wall"
+        }
+      },
+      "present__diagonal_spotlight_beams": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the diagonal spotlight beams?",
+        "criteria": {
+          "true": "The diagonal spotlight beams can be found in the image",
+          "false": "Nothing in the image matches the diagonal spotlight beams"
+        }
+      },
+      "present__curved_bright_edge_of_the_stage_floor": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the curved bright edge of the stage floor?",
+        "criteria": {
+          "true": "The curved bright edge of the stage floor can be found in the image",
+          "false": "Nothing in the image matches the curved bright edge of the stage floor"
+        }
+      },
+      "present__small_stage_lamps_along_the_front_edge_of_the": {
+        "type": "noul",
+        "instructions": "Does `scene` contain the small stage lamps along the front edge of the stage?",
+        "criteria": {
+          "true": "The small stage lamps along the front edge of the stage can be found in the image",
+          "false": "Nothing in the image matches the small stage lamps along the front edge of the stage"
+        }
+      }
+    }
+  },
+  "images": {
+    "right": [
+      784,
+      604
+    ],
+    "thumb": [
+      726,
+      280
+    ],
+    "scene": [
+      1568,
+      604
+    ],
+    "left": [
+      784,
+      604
+    ]
+  }
+}

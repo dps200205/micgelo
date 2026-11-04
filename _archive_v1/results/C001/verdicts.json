@@ -1,0 +1,1463 @@
+{
+  "case": "C001",
+  "model": "jev-1.14.0",
+  "usage": {
+    "input_tokens": 12912,
+    "output_tokens": 2263
+  },
+  "summary": {
+    "D": {
+      "overall": "不合格",
+      "counts": {
+        "合格": 5,
+        "存疑": 8,
+        "不合格": 1,
+        "不适用": 1,
+        "描述": 1
+      }
+    },
+    "J": {
+      "overall": "需优化（7 项存疑待复核）",
+      "counts": {
+        "合格": 5,
+        "存疑": 7
+      }
+    }
+  },
+  "clauses": {
+    "D01": {
+      "title": "关键元素在实际分析范围内发挥预期作用",
+      "same_as": null,
+      "note": "仅检查“引导线在全图中仍可见”；分析范围与裁切是否合适需大模型结合项目说明判断。",
+      "checks": [
+        {
+          "obs": "line_visible_full",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "合格",
+          "p_good": 0.9,
+          "items": [
+            {
+              "qid": "line_visible_full__diagonal_spotlight_beams",
+              "item": "diagonal_spotlight_beams",
+              "question": "Looking at the whole of `scene`, is the diagonal spotlight beams clearly visible?",
+              "answer": 0.9,
+              "probabilities": null,
+              "p_good": 0.9,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "line_visible_full__curved_bright_edge_of_the_stage_floor",
+              "item": "curved_bright_edge_of_the_stage_floor",
+              "question": "Looking at the whole of `scene`, is the curved bright edge of the stage floor clearly visible?",
+              "answer": 0.96,
+              "probabilities": null,
+              "p_good": 0.96,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "D02": {
+      "title": "画面的主导构成符合表达目标",
+      "same_as": null,
+      "note": "项目说明未给 dominant_form_target 时只做描述，不判定。",
+      "checks": [
+        {
+          "obs": "dominant_form",
+          "rule": {
+            "match_brief": "dominant_form_target"
+          },
+          "verdict": "描述",
+          "p_good": null,
+          "items": [
+            {
+              "qid": "dominant_form",
+              "item": null,
+              "question": "What mainly organizes the composition of `scene`?",
+              "answer": "long_directional_lines",
+              "probabilities": {
+                "small_separate_spots": 0.02,
+                "long_directional_lines": 0.56,
+                "large_areas_of_shape": 0.07,
+                "mixed_balance": 0.35
+              },
+              "p_good": null,
+              "gated": null
+            }
+          ]
+        }
+      ],
+      "verdict": "描述"
+    },
+    "D03": {
+      "title": "需要形成对比的视觉层次能够区分",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "levels_distinct",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.98,
+          "items": [
+            {
+              "qid": "levels_distinct",
+              "item": null,
+              "question": "Do some elements in `scene` look clearly more prominent than the rest?",
+              "answer": 0.98,
+              "probabilities": null,
+              "p_good": 0.98,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "D04": {
+      "title": "需要强调的焦点能够被识别",
+      "same_as": null,
+      "note": "多主体画面需在项目说明中指定主体，目前只支持单一主体。",
+      "checks": [
+        {
+          "obs": "first_noticed",
+          "rule": {
+            "good_option_slot": "subject"
+          },
+          "verdict": "合格",
+          "p_good": 0.89,
+          "items": [
+            {
+              "qid": "first_noticed",
+              "item": null,
+              "question": "Which part of `scene` does the eye land on first?",
+              "answer": "golden_statue_of_soldiers_on_the_pedestal",
+              "probabilities": {
+                "golden_statue_of_soldiers_on_the_pedestal": 0.89,
+                "tall_glowing_vertical_panels_behind_the_statue": 0.01,
+                "row_of_dark_human_silhouettes_along_the_back": 0.0,
+                "large_glowing_pink_letters_on_the_back_wall": 0.01,
+                "diagonal_spotlight_beams": 0.0,
+                "curved_bright_edge_of_the_stage_floor": 0.09,
+                "dark_blue_back_wall": 0.0,
+                "tiled_stage_floor": 0.0,
+                "reflective_blue_area_on_the_right_side_of_the": 0.0
+              },
+              "p_good": 0.89,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "subject_stands_out",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.95,
+          "items": [
+            {
+              "qid": "subject_stands_out",
+              "item": null,
+              "question": "Does the golden statue of soldiers on the pedestal stand out clearly from its surroundings in `scene`?",
+              "answer": 0.95,
+              "probabilities": null,
+              "p_good": 0.95,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "D05": {
+      "title": "多点分布形成可读的停顿关系",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "points_equally_loud",
+          "rule": {
+            "good": false,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.35,
+          "items": [
+            {
+              "qid": "points_equally_loud__small_stage_lamps_along_the_front_edge_of_the",
+              "item": "small_stage_lamps_along_the_front_edge_of_the",
+              "question": "Are all of the small stage lamps along the front edge of the stage in `scene` about equally eye-catching?",
+              "answer": 0.65,
+              "probabilities": null,
+              "p_good": 0.35,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        },
+        {
+          "obs": "points_pull_from_subject",
+          "rule": {
+            "good": false,
+            "aggregate": "worst"
+          },
+          "verdict": "合格",
+          "p_good": 0.87,
+          "items": [
+            {
+              "qid": "points_pull_from_subject__small_stage_lamps_along_the_front_edge_of_the",
+              "item": "small_stage_lamps_along_the_front_edge_of_the",
+              "question": "Do the small stage lamps along the front edge of the stage in `scene` pull the eye away from the golden statue of soldiers on the pedestal?",
+              "answer": 0.13,
+              "probabilities": null,
+              "p_good": 0.87,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D06": {
+      "title": "承担引导任务的线具有有效连续性",
+      "same_as": null,
+      "note": "“构成有意循环”的引导方式未覆盖，需大模型补判。",
+      "checks": [
+        {
+          "obs": "line_path_continuous",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.41,
+          "items": [
+            {
+              "qid": "line_path_continuous__diagonal_spotlight_beams",
+              "item": "diagonal_spotlight_beams",
+              "question": "Can the eye follow the diagonal spotlight beams in `scene` as one continuous path?",
+              "answer": 0.41,
+              "probabilities": null,
+              "p_good": 0.41,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "line_path_continuous__curved_bright_edge_of_the_stage_floor",
+              "item": "curved_bright_edge_of_the_stage_floor",
+              "question": "Can the eye follow the curved bright edge of the stage floor in `scene` as one continuous path?",
+              "answer": 0.85,
+              "probabilities": null,
+              "p_good": 0.85,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "line_leads_to_subject",
+          "rule": {
+            "good": true,
+            "aggregate": "best"
+          },
+          "verdict": "合格",
+          "p_good": 0.81,
+          "items": [
+            {
+              "qid": "line_leads_to_subject__diagonal_spotlight_beams",
+              "item": "diagonal_spotlight_beams",
+              "question": "Does following the diagonal spotlight beams in `scene` bring the eye to the golden statue of soldiers on the pedestal?",
+              "answer": 0.81,
+              "probabilities": null,
+              "p_good": 0.81,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "line_leads_to_subject__curved_bright_edge_of_the_stage_floor",
+              "item": "curved_bright_edge_of_the_stage_floor",
+              "question": "Does following the curved bright edge of the stage floor in `scene` bring the eye to the golden statue of soldiers on the pedestal?",
+              "answer": 0.8,
+              "probabilities": null,
+              "p_good": 0.8,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D07": {
+      "title": "需要形成强线感时，跨度与显著性足够",
+      "same_as": null,
+      "note": "“约一半跨度”是课堂经验提示而非阈值，因此设为 soft。",
+      "checks": [
+        {
+          "obs": "line_spans_far",
+          "rule": {
+            "good": true,
+            "aggregate": "best",
+            "soft": true
+          },
+          "verdict": "合格",
+          "p_good": 0.94,
+          "items": [
+            {
+              "qid": "line_spans_far__diagonal_spotlight_beams",
+              "item": "diagonal_spotlight_beams",
+              "question": "Does the diagonal spotlight beams stretch across at least half of `scene` in its main direction?",
+              "answer": 0.88,
+              "probabilities": null,
+              "p_good": 0.88,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "line_spans_far__curved_bright_edge_of_the_stage_floor",
+              "item": "curved_bright_edge_of_the_stage_floor",
+              "question": "Does the curved bright edge of the stage floor stretch across at least half of `scene` in its main direction?",
+              "answer": 0.94,
+              "probabilities": null,
+              "p_good": 0.94,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "line_contrast",
+          "rule": {
+            "good": true,
+            "aggregate": "best"
+          },
+          "verdict": "合格",
+          "p_good": 0.76,
+          "items": [
+            {
+              "qid": "line_contrast__diagonal_spotlight_beams",
+              "item": "diagonal_spotlight_beams",
+              "question": "Does the diagonal spotlight beams stand out clearly against what is behind it in `scene`?",
+              "answer": 0.76,
+              "probabilities": null,
+              "p_good": 0.76,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "line_contrast__curved_bright_edge_of_the_stage_floor",
+              "item": "curved_bright_edge_of_the_stage_floor",
+              "question": "Does the curved bright edge of the stage floor stand out clearly against what is behind it in `scene`?",
+              "answer": 0.67,
+              "probabilities": null,
+              "p_good": 0.67,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "D08": {
+      "title": "线宽与面感的关系符合设计意图",
+      "same_as": null,
+      "note": "若设计本意就是条带面，应在项目说明中注明，由大模型复核。",
+      "checks": [
+        {
+          "obs": "line_reads_as_band",
+          "rule": {
+            "good": false,
+            "aggregate": "worst",
+            "soft": true
+          },
+          "verdict": "存疑",
+          "p_good": 0.43,
+          "items": [
+            {
+              "qid": "line_reads_as_band__diagonal_spotlight_beams",
+              "item": "diagonal_spotlight_beams",
+              "question": "Is the diagonal spotlight beams in `scene` so wide that it looks more like a flat area than a line?",
+              "answer": 0.1,
+              "probabilities": null,
+              "p_good": 0.9,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "line_reads_as_band__curved_bright_edge_of_the_stage_floor",
+              "item": "curved_bright_edge_of_the_stage_floor",
+              "question": "Is the curved bright edge of the stage floor in `scene` so wide that it looks more like a flat area than a line?",
+              "answer": 0.57,
+              "probabilities": null,
+              "p_good": 0.43,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D09": {
+      "title": "主要块面的形状与归属清楚",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "area_shape_clear",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.37,
+          "items": [
+            {
+              "qid": "area_shape_clear__dark_blue_back_wall",
+              "item": "dark_blue_back_wall",
+              "question": "In `scene`, is the overall shape of the dark blue back wall easy to see?",
+              "answer": 0.37,
+              "probabilities": null,
+              "p_good": 0.37,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "area_shape_clear__tiled_stage_floor",
+              "item": "tiled_stage_floor",
+              "question": "In `scene`, is the overall shape of the tiled stage floor easy to see?",
+              "answer": 0.75,
+              "probabilities": null,
+              "p_good": 0.75,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "area_shape_clear__reflective_blue_area_on_the_right_side_of_the",
+              "item": "reflective_blue_area_on_the_right_side_of_the",
+              "question": "In `scene`, is the overall shape of the reflective blue area on the right side of the floor easy to see?",
+              "answer": 0.66,
+              "probabilities": null,
+              "p_good": 0.66,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        },
+        {
+          "obs": "area_broken_up",
+          "rule": {
+            "good": false,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.52,
+          "items": [
+            {
+              "qid": "area_broken_up__dark_blue_back_wall",
+              "item": "dark_blue_back_wall",
+              "question": "Is the dark blue back wall in `scene` broken into many small fragments by highlights, shadows or texture?",
+              "answer": 0.3,
+              "probabilities": null,
+              "p_good": 0.7,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "area_broken_up__tiled_stage_floor",
+              "item": "tiled_stage_floor",
+              "question": "Is the tiled stage floor in `scene` broken into many small fragments by highlights, shadows or texture?",
+              "answer": 0.44,
+              "probabilities": null,
+              "p_good": 0.56,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "area_broken_up__reflective_blue_area_on_the_right_side_of_the",
+              "item": "reflective_blue_area_on_the_right_side_of_the",
+              "question": "Is the reflective blue area on the right side of the floor in `scene` broken into many small fragments by highlights, shadows or texture?",
+              "answer": 0.48,
+              "probabilities": null,
+              "p_good": 0.52,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D10": {
+      "title": "正形与负空间共同支持形体识别",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "shapes_merge",
+          "rule": {
+            "good": false
+          },
+          "verdict": "存疑",
+          "p_good": 0.5,
+          "items": [
+            {
+              "qid": "shapes_merge",
+              "item": null,
+              "question": "In `scene`, do neighboring shapes touch or overlap so that it is hard to tell them apart?",
+              "answer": 0.5,
+              "probabilities": null,
+              "p_good": 0.5,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        },
+        {
+          "obs": "distracting_gaps",
+          "rule": {
+            "good": false
+          },
+          "verdict": "存疑",
+          "p_good": 0.6,
+          "items": [
+            {
+              "qid": "distracting_gaps",
+              "item": null,
+              "question": "Are there small eye-catching gaps or slivers of background between shapes in `scene`?",
+              "answer": 0.4,
+              "probabilities": null,
+              "p_good": 0.6,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D11": {
+      "title": "轮廓的节点与流动特征符合所需感受",
+      "same_as": null,
+      "note": "只检查主体轮廓；“流畅 vs 尖锐节点”的目标需在项目说明中给出后再细化。",
+      "checks": [
+        {
+          "obs": "subject_outline_readable",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.88,
+          "items": [
+            {
+              "qid": "subject_outline_readable",
+              "item": null,
+              "question": "Is the outline of the golden statue of soldiers on the pedestal easy to read against the background in `scene`?",
+              "answer": 0.88,
+              "probabilities": null,
+              "p_good": 0.88,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "subject_outline_noisy",
+          "rule": {
+            "good": false,
+            "soft": true
+          },
+          "verdict": "合格",
+          "p_good": 0.91,
+          "items": [
+            {
+              "qid": "subject_outline_noisy",
+              "item": null,
+              "question": "Is the outline of the golden statue of soldiers on the pedestal in `scene` broken up by many small random notches and bumps?",
+              "answer": 0.09,
+              "probabilities": null,
+              "p_good": 0.91,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "D12": {
+      "title": "点线聚集后的整体性质没有偏离目标",
+      "same_as": "J09",
+      "note": "",
+      "checks": [
+        {
+          "obs": "group_reads_as",
+          "rule": {
+            "match_item": "target_read",
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.57,
+          "items": [
+            {
+              "qid": "group_reads_as__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "As a whole, how do the tall glowing vertical panels behind the statue in `scene` read?",
+              "answer": "separate_items",
+              "probabilities": {
+                "separate_items": 0.71,
+                "one_continuous_path": 0.26,
+                "one_filled_area": 0.03
+              },
+              "p_good": null,
+              "gated": null
+            },
+            {
+              "qid": "group_reads_as__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "As a whole, how do the row of dark human silhouettes along the back wall in `scene` read?",
+              "answer": "one_continuous_path",
+              "probabilities": {
+                "separate_items": 0.43,
+                "one_continuous_path": 0.57,
+                "one_filled_area": 0.0
+              },
+              "p_good": 0.57,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_reads_as__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "As a whole, how do the large glowing pink letters on the back wall in `scene` read?",
+              "answer": "separate_items",
+              "probabilities": {
+                "separate_items": 0.62,
+                "one_continuous_path": 0.33,
+                "one_filled_area": 0.05
+              },
+              "p_good": null,
+              "gated": null
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D13": {
+      "title": "光影与材质细节没有破坏构成",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "glow_clutter",
+          "rule": {
+            "good": false
+          },
+          "verdict": "合格",
+          "p_good": 0.81,
+          "items": [
+            {
+              "qid": "glow_clutter",
+              "item": null,
+              "question": "Do the highlights, glows and small bright spots in `scene` look scattered and noisy?",
+              "answer": 0.19,
+              "probabilities": null,
+              "p_good": 0.81,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "highlights_compete_subject",
+          "rule": {
+            "good": false
+          },
+          "verdict": "不合格",
+          "p_good": 0.25,
+          "items": [
+            {
+              "qid": "highlights_compete_subject",
+              "item": null,
+              "question": "Do highlights or glows away from the golden statue of soldiers on the pedestal pull the eye away from it in `scene`?",
+              "answer": 0.75,
+              "probabilities": null,
+              "p_good": 0.25,
+              "gated": null,
+              "verdict": "不合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "不合格"
+    },
+    "D14": {
+      "title": "追求多类平衡时，各类确实具有可感知的分量",
+      "same_as": null,
+      "note": "",
+      "checks": [],
+      "verdict": "不适用"
+    },
+    "D15": {
+      "title": "各类元素的分布形成有意的整体关系",
+      "same_as": "J10",
+      "note": "大片留白可以合格，所以左右半图检查设为 soft；左右比较由代码切图完成。",
+      "checks": [
+        {
+          "obs": "lopsided",
+          "rule": {
+            "good": false
+          },
+          "verdict": "存疑",
+          "p_good": 0.39,
+          "items": [
+            {
+              "qid": "lopsided",
+              "item": null,
+              "question": "Does `scene` feel lopsided, as if one side is much heavier than the other?",
+              "answer": 0.61,
+              "probabilities": null,
+              "p_good": 0.39,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        },
+        {
+          "obs": "half_holds_eye",
+          "rule": {
+            "good": true,
+            "aggregate": "worst",
+            "soft": true
+          },
+          "verdict": "存疑",
+          "p_good": 0.6,
+          "items": [
+            {
+              "qid": "half_holds_eye__left",
+              "item": "left",
+              "question": "Does this part of an image, 8dba464f-left, contain something that holds the viewer's attention?",
+              "answer": 0.95,
+              "probabilities": null,
+              "p_good": 0.95,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "half_holds_eye__right",
+              "item": "right",
+              "question": "Does this part of an image, 8dba464f-right, contain something that holds the viewer's attention?",
+              "answer": 0.6,
+              "probabilities": null,
+              "p_good": 0.6,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "D16": {
+      "title": "最终观看条件下，必要层次仍然成立",
+      "same_as": "J12",
+      "note": "缩略图短边 280 像素（Jev 下限），代表手机信息流尺寸；其他展示尺寸需另配。",
+      "checks": [
+        {
+          "obs": "thumb_subject_visible",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.91,
+          "items": [
+            {
+              "qid": "thumb_subject_visible",
+              "item": null,
+              "question": "In this small version of the image, 8dba464f-thumb, is the golden statue of soldiers on the pedestal still easy to pick out?",
+              "answer": 0.91,
+              "probabilities": null,
+              "p_good": 0.91,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "thumb_group_visible",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.69,
+          "items": [
+            {
+              "qid": "thumb_group_visible__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "In this small version of the image, 8dba464f-thumb, can the tall glowing vertical panels behind the statue still be seen as a group?",
+              "answer": 0.86,
+              "probabilities": null,
+              "p_good": 0.86,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "thumb_group_visible__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "In this small version of the image, 8dba464f-thumb, can the row of dark human silhouettes along the back wall still be seen as a group?",
+              "answer": 0.86,
+              "probabilities": null,
+              "p_good": 0.86,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "thumb_group_visible__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "In this small version of the image, 8dba464f-thumb, can the large glowing pink letters on the back wall still be seen as a group?",
+              "answer": 0.69,
+              "probabilities": null,
+              "p_good": 0.69,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J01": {
+      "title": "需要成组的元素能被读作一组",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "group_reads_as_one",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "合格",
+          "p_good": 0.8,
+          "items": [
+            {
+              "qid": "group_reads_as_one__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "Do the tall glowing vertical panels behind the statue in `scene` look like they belong together as one group?",
+              "answer": 0.92,
+              "probabilities": null,
+              "p_good": 0.92,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "group_reads_as_one__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "Do the row of dark human silhouettes along the back wall in `scene` look like they belong together as one group?",
+              "answer": 0.92,
+              "probabilities": null,
+              "p_good": 0.92,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "group_reads_as_one__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "Do the large glowing pink letters on the back wall in `scene` look like they belong together as one group?",
+              "answer": 0.8,
+              "probabilities": null,
+              "p_good": 0.8,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "J02": {
+      "title": "组内联系与组间分隔能够区分",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "group_merges_neighbor",
+          "rule": {
+            "good": false,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.45,
+          "items": [
+            {
+              "qid": "group_merges_neighbor__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "Do the tall glowing vertical panels behind the statue in `scene` blend into nearby elements so that it is unclear where the group ends?",
+              "answer": 0.35,
+              "probabilities": null,
+              "p_good": 0.65,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_merges_neighbor__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "Do the row of dark human silhouettes along the back wall in `scene` blend into nearby elements so that it is unclear where the group ends?",
+              "answer": 0.4,
+              "probabilities": null,
+              "p_good": 0.6,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_merges_neighbor__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "Do the large glowing pink letters on the back wall in `scene` blend into nearby elements so that it is unclear where the group ends?",
+              "answer": 0.55,
+              "probabilities": null,
+              "p_good": 0.45,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J03": {
+      "title": "疏密层次符合画面的组织目标",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "has_density_contrast",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.94,
+          "items": [
+            {
+              "qid": "has_density_contrast",
+              "item": null,
+              "question": "Does `scene` contain both a clearly busy area and clearly calmer areas?",
+              "answer": 0.94,
+              "probabilities": null,
+              "p_good": 0.94,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "J04": {
+      "title": "主要关注对象与聚散组织相互配合",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "busy_area_beats_subject",
+          "rule": {
+            "good": false
+          },
+          "verdict": "合格",
+          "p_good": 0.91,
+          "items": [
+            {
+              "qid": "busy_area_beats_subject",
+              "item": null,
+              "question": "Is there a busy, detailed area in `scene`, other than the golden statue of soldiers on the pedestal, that draws more attention than the golden statue of soldiers on the pedestal?",
+              "answer": 0.09,
+              "probabilities": null,
+              "p_good": 0.91,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "subject_has_space",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.78,
+          "items": [
+            {
+              "qid": "subject_has_space",
+              "item": null,
+              "question": "Is there enough calm space around the golden statue of soldiers on the pedestal in `scene` for it to be seen clearly?",
+              "answer": 0.78,
+              "probabilities": null,
+              "p_good": 0.78,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "J05": {
+      "title": "密区形成整体时仍保留必要信息",
+      "same_as": null,
+      "note": "只需形成纹理的密区不必可数，场景解析时不要把这类区域列入 dense_regions。",
+      "checks": [
+        {
+          "obs": "dense_details_distinct",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "合格",
+          "p_good": 0.88,
+          "items": [
+            {
+              "qid": "dense_details_distinct__cluster_of_soldier_figures_in_the_statue",
+              "item": "cluster_of_soldier_figures_in_the_statue",
+              "question": "Within the cluster of soldier figures in the statue in `scene`, can the important individual shapes still be told apart?",
+              "answer": 0.88,
+              "probabilities": null,
+              "p_good": 0.88,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "J06": {
+      "title": "散开的元素具有可解释的组织作用",
+      "same_as": null,
+      "note": "散点本身可能是有意孤立，只有“抢走主体注意力”才判硬性不合格。",
+      "checks": [
+        {
+          "obs": "stray_elements",
+          "rule": {
+            "good": false,
+            "soft": true
+          },
+          "verdict": "合格",
+          "p_good": 0.73,
+          "items": [
+            {
+              "qid": "stray_elements",
+              "item": null,
+              "question": "Are there small isolated elements in `scene` that belong to no group, no path and not to the main subject?",
+              "answer": 0.27,
+              "probabilities": null,
+              "p_good": 0.73,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "stray_pull_from_subject",
+          "rule": {
+            "good": false
+          },
+          "verdict": "存疑",
+          "p_good": 0.61,
+          "items": [
+            {
+              "qid": "stray_pull_from_subject",
+              "item": null,
+              "question": "Do small isolated elements in `scene` pull the eye away from the golden statue of soldiers on the pedestal?",
+              "answer": 0.39,
+              "probabilities": null,
+              "p_good": 0.61,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J07": {
+      "title": "疏密转换具有可读的节奏",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "abrupt_density_jump",
+          "rule": {
+            "good": false
+          },
+          "verdict": "合格",
+          "p_good": 0.7,
+          "items": [
+            {
+              "qid": "abrupt_density_jump",
+              "item": null,
+              "question": "Does `scene` have a sudden, awkward jump from a crowded area to an empty area?",
+              "answer": 0.3,
+              "probabilities": null,
+              "p_good": 0.7,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "合格"
+    },
+    "J08": {
+      "title": "群组作为整体时具有可辨认的形状或方向",
+      "same_as": null,
+      "note": "",
+      "checks": [
+        {
+          "obs": "group_shape_clear",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.68,
+          "items": [
+            {
+              "qid": "group_shape_clear__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "Taken as a whole, do the tall glowing vertical panels behind the statue in `scene` form an overall shape that is easy to see?",
+              "answer": 0.68,
+              "probabilities": null,
+              "p_good": 0.68,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_shape_clear__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "Taken as a whole, do the row of dark human silhouettes along the back wall in `scene` form an overall shape that is easy to see?",
+              "answer": 0.71,
+              "probabilities": null,
+              "p_good": 0.71,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "group_shape_clear__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "Taken as a whole, do the large glowing pink letters on the back wall in `scene` form an overall shape that is easy to see?",
+              "answer": 0.75,
+              "probabilities": null,
+              "p_good": 0.75,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "group_outliers",
+          "rule": {
+            "good": false,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.39,
+          "items": [
+            {
+              "qid": "group_outliers__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "Do a few of the tall glowing vertical panels behind the statue in `scene` stick out from the rest so that the group's outline looks messy?",
+              "answer": 0.61,
+              "probabilities": null,
+              "p_good": 0.39,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_outliers__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "Do a few of the row of dark human silhouettes along the back wall in `scene` stick out from the rest so that the group's outline looks messy?",
+              "answer": 0.48,
+              "probabilities": null,
+              "p_good": 0.52,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_outliers__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "Do a few of the large glowing pink letters on the back wall in `scene` stick out from the rest so that the group's outline looks messy?",
+              "answer": 0.53,
+              "probabilities": null,
+              "p_good": 0.47,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J09": {
+      "title": "聚集程度没有造成非预期的点线面转换",
+      "same_as": "D12",
+      "note": "",
+      "checks": [
+        {
+          "obs": "group_reads_as",
+          "rule": {
+            "match_item": "target_read",
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.57,
+          "items": [
+            {
+              "qid": "group_reads_as__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "As a whole, how do the tall glowing vertical panels behind the statue in `scene` read?",
+              "answer": "separate_items",
+              "probabilities": {
+                "separate_items": 0.71,
+                "one_continuous_path": 0.26,
+                "one_filled_area": 0.03
+              },
+              "p_good": null,
+              "gated": null
+            },
+            {
+              "qid": "group_reads_as__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "As a whole, how do the row of dark human silhouettes along the back wall in `scene` read?",
+              "answer": "one_continuous_path",
+              "probabilities": {
+                "separate_items": 0.43,
+                "one_continuous_path": 0.57,
+                "one_filled_area": 0.0
+              },
+              "p_good": 0.57,
+              "gated": null,
+              "verdict": "存疑"
+            },
+            {
+              "qid": "group_reads_as__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "As a whole, how do the large glowing pink letters on the back wall in `scene` read?",
+              "answer": "separate_items",
+              "probabilities": {
+                "separate_items": 0.62,
+                "one_continuous_path": 0.33,
+                "one_filled_area": 0.05
+              },
+              "p_good": null,
+              "gated": null
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J10": {
+      "title": "群组之间的视觉分量符合主次或平衡目标",
+      "same_as": "D15",
+      "note": "",
+      "checks": [
+        {
+          "obs": "lopsided",
+          "rule": {
+            "good": false
+          },
+          "verdict": "存疑",
+          "p_good": 0.39,
+          "items": [
+            {
+              "qid": "lopsided",
+              "item": null,
+              "question": "Does `scene` feel lopsided, as if one side is much heavier than the other?",
+              "answer": 0.61,
+              "probabilities": null,
+              "p_good": 0.39,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        },
+        {
+          "obs": "group_overpowers_subject",
+          "rule": {
+            "good": false,
+            "aggregate": "worst"
+          },
+          "verdict": "合格",
+          "p_good": 0.84,
+          "items": [
+            {
+              "qid": "group_overpowers_subject__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "Do the tall glowing vertical panels behind the statue in `scene` look visually heavier than the golden statue of soldiers on the pedestal?",
+              "answer": 0.16,
+              "probabilities": null,
+              "p_good": 0.84,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "group_overpowers_subject__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "Do the row of dark human silhouettes along the back wall in `scene` look visually heavier than the golden statue of soldiers on the pedestal?",
+              "answer": 0.06,
+              "probabilities": null,
+              "p_good": 0.94,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "group_overpowers_subject__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "Do the large glowing pink letters on the back wall in `scene` look visually heavier than the golden statue of soldiers on the pedestal?",
+              "answer": 0.13,
+              "probabilities": null,
+              "p_good": 0.87,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J11": {
+      "title": "组间空白和静区具有明确作用",
+      "same_as": null,
+      "note": "满版设计也可合格，所以“有无静区”设为 soft；标题、按钮等功能区核对需在项目说明中给出。",
+      "checks": [
+        {
+          "obs": "has_rest_area",
+          "rule": {
+            "good": true,
+            "soft": true
+          },
+          "verdict": "合格",
+          "p_good": 0.82,
+          "items": [
+            {
+              "qid": "has_rest_area",
+              "item": null,
+              "question": "Is there an area in `scene` with little detail where the eye can rest?",
+              "answer": 0.82,
+              "probabilities": null,
+              "p_good": 0.82,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "distracting_gaps",
+          "rule": {
+            "good": false
+          },
+          "verdict": "存疑",
+          "p_good": 0.6,
+          "items": [
+            {
+              "qid": "distracting_gaps",
+              "item": null,
+              "question": "Are there small eye-catching gaps or slivers of background between shapes in `scene`?",
+              "answer": 0.4,
+              "probabilities": null,
+              "p_good": 0.6,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    },
+    "J12": {
+      "title": "聚散关系在实际观看尺度下仍有效",
+      "same_as": "D16",
+      "note": "",
+      "checks": [
+        {
+          "obs": "thumb_subject_visible",
+          "rule": {
+            "good": true
+          },
+          "verdict": "合格",
+          "p_good": 0.91,
+          "items": [
+            {
+              "qid": "thumb_subject_visible",
+              "item": null,
+              "question": "In this small version of the image, 8dba464f-thumb, is the golden statue of soldiers on the pedestal still easy to pick out?",
+              "answer": 0.91,
+              "probabilities": null,
+              "p_good": 0.91,
+              "gated": null,
+              "verdict": "合格"
+            }
+          ]
+        },
+        {
+          "obs": "thumb_group_visible",
+          "rule": {
+            "good": true,
+            "aggregate": "worst"
+          },
+          "verdict": "存疑",
+          "p_good": 0.69,
+          "items": [
+            {
+              "qid": "thumb_group_visible__tall_glowing_vertical_panels_behind_the_statue",
+              "item": "tall_glowing_vertical_panels_behind_the_statue",
+              "question": "In this small version of the image, 8dba464f-thumb, can the tall glowing vertical panels behind the statue still be seen as a group?",
+              "answer": 0.86,
+              "probabilities": null,
+              "p_good": 0.86,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "thumb_group_visible__row_of_dark_human_silhouettes_along_the_back",
+              "item": "row_of_dark_human_silhouettes_along_the_back",
+              "question": "In this small version of the image, 8dba464f-thumb, can the row of dark human silhouettes along the back wall still be seen as a group?",
+              "answer": 0.86,
+              "probabilities": null,
+              "p_good": 0.86,
+              "gated": null,
+              "verdict": "合格"
+            },
+            {
+              "qid": "thumb_group_visible__large_glowing_pink_letters_on_the_back_wall",
+              "item": "large_glowing_pink_letters_on_the_back_wall",
+              "question": "In this small version of the image, 8dba464f-thumb, can the large glowing pink letters on the back wall still be seen as a group?",
+              "answer": 0.69,
+              "probabilities": null,
+              "p_good": 0.69,
+              "gated": null,
+              "verdict": "存疑"
+            }
+          ]
+        }
+      ],
+      "verdict": "存疑"
+    }
+  }
+}

@@ -1,0 +1,216 @@
+# 条款层：每条条款 = 适用条件 + 引用的观察问题 + 判定方式。合格与否由代码按此判定，Jev 看不到条款。
+#
+# 条款字段
+#   title       与标准 md 中的标题一致（lint 会核对）
+#   applies_if  条件列表，全部成立才评；否则“不适用”
+#   checks      引用 observations.yaml 中的问题
+#   same_as     与另一维度条款同源，报告中合并，避免重复扣分
+#   note        编译说明：覆盖范围、未覆盖的部分、需要大模型补判的地方
+#
+# check 字段
+#   obs           观察问题 ID
+#   good          noul：true 表示“是”为好，false 表示“否”为好
+#   good_option_slot / good_options / match_brief / match_item   choice 的判定方式
+#   aggregate     展开到多个元素时：worst（任一不好即不好，默认）| best（至少一个好即可）
+#   soft          可能出于有意设计，最差只判“需优化”
+#   applies_if    该检查自身的适用条件
+#
+# 条件语法：  scene.槽位（非空即成立）| brief.字段 == 值 | brief.字段 != 值 | brief.字段 in [a, b]
+
+clauses:
+
+  # ======================= 01 点线面 =======================
+  D01:
+    title: 关键元素在实际分析范围内发挥预期作用
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_visible_full, good: true, aggregate: worst}
+    note: 仅检查“引导线在全图中仍可见”；分析范围与裁切是否合适需大模型结合项目说明判断。
+
+  D02:
+    title: 画面的主导构成符合表达目标
+    checks:
+      - {obs: dominant_form, match_brief: dominant_form_target}
+    note: 项目说明未给 dominant_form_target 时只做描述，不判定。
+
+  D03:
+    title: 需要形成对比的视觉层次能够区分
+    applies_if: [brief.goal != uniform_pattern]
+    checks:
+      - {obs: levels_distinct, good: true}
+
+  D04:
+    title: 需要强调的焦点能够被识别
+    applies_if: [scene.subject]
+    checks:
+      - {obs: first_noticed, good_option_slot: subject}
+      - {obs: subject_stands_out, good: true}
+    note: 多主体画面需在项目说明中指定主体，目前只支持单一主体。
+
+  D05:
+    title: 多点分布形成可读的停顿关系
+    applies_if: [scene.point_groups, brief.goal != uniform_pattern]
+    checks:
+      - {obs: points_equally_loud, good: false, aggregate: worst}
+      - {obs: points_pull_from_subject, good: false, aggregate: worst, applies_if: [scene.subject]}
+
+  D06:
+    title: 承担引导任务的线具有有效连续性
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_path_continuous, good: true, aggregate: worst}
+      - {obs: line_leads_to_subject, good: true, aggregate: best, applies_if: [scene.subject]}
+    note: “构成有意循环”的引导方式未覆盖，需大模型补判。
+
+  D07:
+    title: 需要形成强线感时，跨度与显著性足够
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_spans_far, good: true, aggregate: best, soft: true}
+      - {obs: line_contrast, good: true, aggregate: best}
+    note: “约一半跨度”是课堂经验提示而非阈值，因此设为 soft。
+
+  D08:
+    title: 线宽与面感的关系符合设计意图
+    applies_if: [scene.guiding_lines]
+    checks:
+      - {obs: line_reads_as_band, good: false, aggregate: worst, soft: true}
+    note: 若设计本意就是条带面，应在项目说明中注明，由大模型复核。
+
+  D09:
+    title: 主要块面的形状与归属清楚
+    applies_if: [scene.large_areas]
+    checks:
+      - {obs: area_shape_clear, good: true, aggregate: worst}
+      - {obs: area_broken_up, good: false, aggregate: worst}
+
+  D10:
+    title: 正形与负空间共同支持形体识别
+    checks:
+      - {obs: shapes_merge, good: false}
+      - {obs: distracting_gaps, good: false}
+
+  D11:
+    title: 轮廓的节点与流动特征符合所需感受
+    applies_if: [scene.subject]
+    checks:
+      - {obs: subject_outline_readable, good: true}
+      - {obs: subject_outline_noisy, good: false, soft: true}
+    note: 只检查主体轮廓；“流畅 vs 尖锐节点”的目标需在项目说明中给出后再细化。
+
+  D12:
+    title: 点线聚集后的整体性质没有偏离目标
+    applies_if: [scene.repeated_groups]
+    same_as: J09
+    checks:
+      - {obs: group_reads_as, match_item: target_read, aggregate: worst}
+
+  D13:
+    title: 光影与材质细节没有破坏构成
+    checks:
+      - {obs: glow_clutter, good: false}
+      - {obs: highlights_compete_subject, good: false, applies_if: [scene.subject]}
+
+  D14:
+    title: 追求多类平衡时，各类确实具有可感知的分量
+    applies_if: ["brief.balance_target in [point_line, point_area, line_area, all_three]"]
+    checks:
+      - {obs: spots_noticeable, good: true, applies_if: ["brief.balance_target in [point_line, point_area, all_three]"]}
+      - {obs: lines_noticeable, good: true, applies_if: ["brief.balance_target in [point_line, line_area, all_three]"]}
+      - {obs: areas_noticeable, good: true, applies_if: ["brief.balance_target in [point_area, line_area, all_three]"]}
+
+  D15:
+    title: 各类元素的分布形成有意的整体关系
+    same_as: J10
+    checks:
+      - {obs: lopsided, good: false}
+      - {obs: half_holds_eye, good: true, aggregate: worst, soft: true}
+    note: 大片留白可以合格，所以左右半图检查设为 soft；左右比较由代码切图完成。
+
+  D16:
+    title: 最终观看条件下，必要层次仍然成立
+    same_as: J12
+    checks:
+      - {obs: thumb_subject_visible, good: true, applies_if: [scene.subject]}
+      - {obs: thumb_group_visible, good: true, aggregate: worst, applies_if: [scene.repeated_groups]}
+    note: 缩略图短边 280 像素（Jev 下限），代表手机信息流尺寸；其他展示尺寸需另配。
+
+  # ======================= 02 聚散 =======================
+  J01:
+    title: 需要成组的元素能被读作一组
+    applies_if: [scene.repeated_groups]
+    checks:
+      - {obs: group_reads_as_one, good: true, aggregate: worst}
+
+  J02:
+    title: 组内联系与组间分隔能够区分
+    applies_if: [scene.repeated_groups]
+    checks:
+      - {obs: group_merges_neighbor, good: false, aggregate: worst}
+
+  J03:
+    title: 疏密层次符合画面的组织目标
+    checks:
+      - {obs: has_density_contrast, good: true, applies_if: [brief.goal != uniform_pattern]}
+      - {obs: uniform_pattern_flaws, good: false, applies_if: [brief.goal == uniform_pattern]}
+
+  J04:
+    title: 主要关注对象与聚散组织相互配合
+    applies_if: [scene.subject]
+    checks:
+      - {obs: busy_area_beats_subject, good: false}
+      - {obs: subject_has_space, good: true}
+
+  J05:
+    title: 密区形成整体时仍保留必要信息
+    applies_if: [scene.dense_regions]
+    checks:
+      - {obs: dense_details_distinct, good: true, aggregate: worst}
+    note: 只需形成纹理的密区不必可数，场景解析时不要把这类区域列入 dense_regions。
+
+  J06:
+    title: 散开的元素具有可解释的组织作用
+    checks:
+      - {obs: stray_elements, good: false, soft: true}
+      - {obs: stray_pull_from_subject, good: false, applies_if: [scene.subject]}
+    note: 散点本身可能是有意孤立，只有“抢走主体注意力”才判硬性不合格。
+
+  J07:
+    title: 疏密转换具有可读的节奏
+    checks:
+      - {obs: abrupt_density_jump, good: false}
+
+  J08:
+    title: 群组作为整体时具有可辨认的形状或方向
+    applies_if: [scene.repeated_groups]
+    checks:
+      - {obs: group_shape_clear, good: true, aggregate: worst}
+      - {obs: group_outliers, good: false, aggregate: worst}
+
+  J09:
+    title: 聚集程度没有造成非预期的点线面转换
+    applies_if: [scene.repeated_groups]
+    same_as: D12
+    checks:
+      - {obs: group_reads_as, match_item: target_read, aggregate: worst}
+
+  J10:
+    title: 群组之间的视觉分量符合主次或平衡目标
+    same_as: D15
+    checks:
+      - {obs: lopsided, good: false}
+      - {obs: group_overpowers_subject, good: false, aggregate: worst, applies_if: [scene.subject, brief.goal == hierarchy]}
+
+  J11:
+    title: 组间空白和静区具有明确作用
+    checks:
+      - {obs: has_rest_area, good: true, soft: true}
+      - {obs: distracting_gaps, good: false}
+    note: 满版设计也可合格，所以“有无静区”设为 soft；标题、按钮等功能区核对需在项目说明中给出。
+
+  J12:
+    title: 聚散关系在实际观看尺度下仍有效
+    same_as: D16
+    checks:
+      - {obs: thumb_subject_visible, good: true, applies_if: [scene.subject]}
+      - {obs: thumb_group_visible, good: true, aggregate: worst, applies_if: [scene.repeated_groups]}

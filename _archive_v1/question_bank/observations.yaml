@@ -1,0 +1,370 @@
+# 观察问题库：Jev 实际回答的问题。多条条款可以引用同一个问题（只问一次、不重复扣分）。
+#
+# 字段
+#   type      noul | choice
+#   q         英文问题模板。`scene` 指原图。
+#   criteria  noul: {true, false}；choice: {选项名: 描述}
+#   over      按某个列表槽位逐项展开，模板里用 {item}
+#   needs     额外依赖的单值槽位，如 [subject]，模板里用 {subject}
+#   image     scene（默认）| thumb（缩略图，模板里用 {thumb_img}）| halves（左右半图，模板里用 {half_img}）
+#   options_from  choice 的选项由槽位动态生成（与 options 二选一）
+#   lint_ok   人工确认过、可以豁免的检查项，附理由
+#
+# 槽位名称一律带冠词的英文名词短语（如 "the golden statue"），模板中不要再写 "the {"。
+
+observations:
+
+  # ---------- 主导与层次 ----------
+  dominant_form:
+    type: choice
+    q: "What mainly organizes the composition of `scene`?"
+    criteria:
+      small_separate_spots: "Many small separate spots, highlights or figures carry the image"
+      long_directional_lines: "Long directional strokes, edges and stripes carry the image"
+      large_areas_of_shape: "Large areas of color and shape carry the image"
+      mixed_balance: "Spots, lines and large areas each play a clearly visible part"
+
+  levels_distinct:
+    type: noul
+    q: "Do some elements in `scene` look clearly more prominent than the rest?"
+    criteria:
+      true: "There are visible levels: a few prominent elements and many quieter ones"
+      false: "All elements look about equally large and strong"
+
+  # ---------- 焦点 ----------
+  first_noticed:
+    type: choice
+    q: "Which part of `scene` does the eye land on first?"
+    options_from: [subject, repeated_groups, guiding_lines, large_areas]
+
+  subject_stands_out:
+    type: noul
+    needs: [subject]
+    q: "Does {subject} stand out clearly from its surroundings in `scene`?"
+    criteria:
+      true: "{subject} is easy to find at a glance"
+      false: "{subject} blends into its surroundings"
+
+  # ---------- 点 ----------
+  points_equally_loud:
+    type: noul
+    over: point_groups
+    q: "Are all of {item} in `scene` about equally eye-catching?"
+    criteria:
+      true: "None of them stands out, so the eye jumps from one to another"
+      false: "Some of them are clearly stronger, or they form readable clusters"
+
+  points_pull_from_subject:
+    type: noul
+    over: point_groups
+    needs: [subject]
+    q: "Do {item} in `scene` pull the eye away from {subject}?"
+    criteria:
+      true: "The eye keeps going to {item} instead of {subject}"
+      false: "{item} stay in a supporting role"
+
+  # ---------- 线 ----------
+  line_visible_full:
+    type: noul
+    over: guiding_lines
+    q: "Looking at the whole of `scene`, is {item} clearly visible?"
+    criteria:
+      true: "{item} can be seen without searching for it"
+      false: "{item} is so faint or small that it is easy to miss"
+
+  line_path_continuous:
+    type: noul
+    over: guiding_lines
+    q: "Can the eye follow {item} in `scene` as one continuous path?"
+    criteria:
+      true: "The path is easy to follow from start to end"
+      false: "Breaks, crossings or tangles make the path get lost"
+    lint_ok: {or: "false 描述列举同一失效的几种原因，不是两个判断"}
+
+  line_leads_to_subject:
+    type: noul
+    over: guiding_lines
+    needs: [subject]
+    q: "Does following {item} in `scene` bring the eye to {subject}?"
+    criteria:
+      true: "{item} points at, frames or converges near {subject}"
+      false: "{item} leads off toward an edge or an empty area"
+    lint_ok: {or: "true 描述列举同一结果的几种形态"}
+
+  line_spans_far:
+    type: noul
+    over: guiding_lines
+    q: "Does {item} stretch across at least half of `scene` in its main direction?"
+    criteria:
+      true: "{item} covers a long distance across the image"
+      false: "{item} is short compared with the image"
+
+  line_contrast:
+    type: noul
+    over: guiding_lines
+    q: "Does {item} stand out clearly against what is behind it in `scene`?"
+    criteria:
+      true: "{item} has strong contrast with its background"
+      false: "{item} is close in tone and color to its background"
+
+  line_reads_as_band:
+    type: noul
+    over: guiding_lines
+    q: "Is {item} in `scene` so wide that it looks more like a flat area than a line?"
+    criteria:
+      true: "Its width is as noticeable as its length"
+      false: "It reads mainly as a direction or path"
+
+  # ---------- 面 ----------
+  area_shape_clear:
+    type: noul
+    over: large_areas
+    q: "In `scene`, is the overall shape of {item} easy to see?"
+    criteria:
+      true: "Its extent and outline can be read as one shape"
+      false: "It is hard to tell where {item} begins and ends"
+
+  area_broken_up:
+    type: noul
+    over: large_areas
+    q: "Is {item} in `scene` broken into many small fragments by highlights, shadows or texture?"
+    criteria:
+      true: "Small bright and dark pieces chop it up so it no longer reads as one area"
+      false: "Its surface detail stays inside one readable area"
+    lint_ok: {or: "列举碎片来源，判断只有一个：是否被切碎"}
+
+  shapes_merge:
+    type: noul
+    q: "In `scene`, do neighboring shapes touch or overlap so that it is hard to tell them apart?"
+    criteria:
+      true: "Some shapes stick together and their boundaries are unclear"
+      false: "Neighboring shapes stay distinct"
+    lint_ok: {or: "touch/overlap 是同一现象的两种形态"}
+
+  distracting_gaps:
+    type: noul
+    q: "Are there small eye-catching gaps or slivers of background between shapes in `scene`?"
+    criteria:
+      true: "Thin awkward gaps or holes between shapes catch the eye"
+      false: "The spaces between shapes are calm or clearly shaped"
+    lint_ok: {or: "gaps/slivers 为同义描述"}
+
+  subject_outline_readable:
+    type: noul
+    needs: [subject]
+    q: "Is the outline of {subject} easy to read against the background in `scene`?"
+    criteria:
+      true: "The silhouette of {subject} separates clearly from what is behind it"
+      false: "The silhouette of {subject} dissolves into the background"
+
+  subject_outline_noisy:
+    type: noul
+    needs: [subject]
+    q: "Is the outline of {subject} in `scene` broken up by many small random notches and bumps?"
+    criteria:
+      true: "The outline looks ragged everywhere, with no clear long curves or key points"
+      false: "The outline has clear long curves or a few deliberate sharp points"
+    lint_ok: {and: "notches/bumps 是同一种轮廓破碎"}
+
+  # ---------- 点线聚集后的整体性质（D12 / J09 共用） ----------
+  group_reads_as:
+    type: choice
+    over: repeated_groups
+    q: "As a whole, how do {item} in `scene` read?"
+    criteria:
+      separate_items: "As separate individual items, each noticed on its own"
+      one_continuous_path: "As one row or path that the eye follows"
+      one_filled_area: "As one filled area or block"
+
+  # ---------- 光影材质 ----------
+  glow_clutter:
+    type: noul
+    q: "Do the highlights, glows and small bright spots in `scene` look scattered and noisy?"
+    criteria:
+      true: "Bright spots are sprinkled everywhere and compete with each other"
+      false: "The lighting effects stay organized and support the mood"
+    lint_ok: {and: "highlights/glows/spots 是同一类元素"}
+
+  highlights_compete_subject:
+    type: noul
+    needs: [subject]
+    q: "Do highlights or glows away from {subject} pull the eye away from it in `scene`?"
+    criteria:
+      true: "A bright area elsewhere is as eye-catching as {subject}"
+      false: "The brightest accents support {subject}"
+    lint_ok: {or: "highlights/glows 为同类元素"}
+
+  # ---------- 多类平衡（D14） ----------
+  spots_noticeable:
+    type: noul
+    q: "Do small separate spots form a clearly visible part of the design of `scene`?"
+    criteria:
+      true: "Small spots are noticed without searching for them"
+      false: "Small spots are absent or too weak to notice"
+
+  lines_noticeable:
+    type: noul
+    q: "Do long lines or stripes form a clearly visible part of the design of `scene`?"
+    criteria:
+      true: "Lines are noticed without searching for them"
+      false: "Lines are absent or too weak to notice"
+    lint_ok: {or: "lines/stripes 为同类元素"}
+
+  areas_noticeable:
+    type: noul
+    q: "Do large blocks of shape form a clearly visible part of the design of `scene`?"
+    criteria:
+      true: "Large blocks are noticed without searching for them"
+      false: "Large blocks are absent or too weak to notice"
+
+  # ---------- 分布与平衡 ----------
+  lopsided:
+    type: noul
+    q: "Does `scene` feel lopsided, as if one side is much heavier than the other?"
+    criteria:
+      true: "The image seems to tip toward one side"
+      false: "The weights on each side feel held together"
+
+  half_holds_eye:
+    type: noul
+    image: halves
+    q: "Does this part of an image, {half_img}, contain something that holds the viewer's attention?"
+    criteria:
+      true: "There is a clear point of interest in this part"
+      false: "This part is a monotonous stretch with nothing to rest the eye on"
+
+  # ---------- 观看尺度（D16 / J12 共用） ----------
+  thumb_subject_visible:
+    type: noul
+    image: thumb
+    needs: [subject]
+    q: "In this small version of the image, {thumb_img}, is {subject} still easy to pick out?"
+    criteria:
+      true: "{subject} is still a clear focal point at this size"
+      false: "{subject} dissolves into its surroundings at this size"
+
+  thumb_group_visible:
+    type: noul
+    image: thumb
+    over: repeated_groups
+    q: "In this small version of the image, {thumb_img}, can {item} still be seen as a group?"
+    criteria:
+      true: "{item} are still readable as one group"
+      false: "{item} turn into noise or disappear"
+
+  # ---------- 成组 ----------
+  group_reads_as_one:
+    type: noul
+    over: repeated_groups
+    q: "Do {item} in `scene` look like they belong together as one group?"
+    criteria:
+      true: "They share a position, look or direction that ties them together"
+      false: "They look like unrelated scattered pieces"
+    lint_ok: {or: "列举成组线索，判断只有一个：是否成组"}
+
+  group_merges_neighbor:
+    type: noul
+    over: repeated_groups
+    q: "Do {item} in `scene` blend into nearby elements so that it is unclear where the group ends?"
+    criteria:
+      true: "The edge of the group is lost among neighboring elements"
+      false: "The group is clearly separated from its neighbors"
+
+  group_shape_clear:
+    type: noul
+    over: repeated_groups
+    q: "Taken as a whole, do {item} in `scene` form an overall shape that is easy to see?"
+    criteria:
+      true: "The group has a readable outline or main direction"
+      false: "The group has no readable overall outline"
+    lint_ok: {or: "outline/direction 是整体形状的两种读法"}
+
+  group_outliers:
+    type: noul
+    over: repeated_groups
+    q: "Do a few of {item} in `scene` stick out from the rest so that the group's outline looks messy?"
+    criteria:
+      true: "Stray members break the group's overall outline"
+      false: "All members sit within the group's overall outline"
+
+  group_overpowers_subject:
+    type: noul
+    over: repeated_groups
+    needs: [subject]
+    q: "Do {item} in `scene` look visually heavier than {subject}?"
+    criteria:
+      true: "{item} carry more visual weight than {subject}"
+      false: "{subject} keeps more visual weight than {item}"
+
+  # ---------- 疏密 ----------
+  has_density_contrast:
+    type: noul
+    q: "Does `scene` contain both a clearly busy area and clearly calmer areas?"
+    criteria:
+      true: "One area is visibly denser and other areas are visibly quieter"
+      false: "Every part of the image is about equally busy"
+    lint_ok: {and: "判断的是“存在疏密对比”这一件事"}
+
+  uniform_pattern_flaws:
+    type: noul
+    q: "Does the repeated pattern in `scene` have unexpected gaps or crowded spots?"
+    criteria:
+      true: "The even rhythm is broken by holes or clumps"
+      false: "The repeated pattern stays even throughout"
+    lint_ok: {or: "gaps/crowded 都是节奏断裂"}
+
+  busy_area_beats_subject:
+    type: noul
+    needs: [subject]
+    q: "Is there a busy, detailed area in `scene`, other than {subject}, that draws more attention than {subject}?"
+    criteria:
+      true: "Some dense area elsewhere wins the viewer's attention"
+      false: "Dense areas elsewhere stay secondary to {subject}"
+
+  subject_has_space:
+    type: noul
+    needs: [subject]
+    q: "Is there enough calm space around {subject} in `scene` for it to be seen clearly?"
+    criteria:
+      true: "{subject} has breathing room or a quiet backdrop"
+      false: "{subject} is crowded by competing detail"
+    lint_ok: {or: "两种形态都表示有分隔"}
+
+  dense_details_distinct:
+    type: noul
+    over: dense_regions
+    q: "Within {item} in `scene`, can the important individual shapes still be told apart?"
+    criteria:
+      true: "Key figures, objects or outlines inside it are recognizable"
+      false: "Everything inside it merges into one lump"
+    lint_ok: {or: "列举可辨认对象"}
+
+  stray_elements:
+    type: noul
+    q: "Are there small isolated elements in `scene` that belong to no group, no path and not to the main subject?"
+    criteria:
+      true: "Some small elements float around without any visible relation"
+      false: "Small elements belong to clear groups, rows or paths"
+    lint_ok: {and: "判断只有一个：元素是否不属于任何组织"}
+
+  stray_pull_from_subject:
+    type: noul
+    needs: [subject]
+    q: "Do small isolated elements in `scene` pull the eye away from {subject}?"
+    criteria:
+      true: "The eye keeps jumping to small loose elements"
+      false: "Small loose elements, if any, stay quiet"
+
+  abrupt_density_jump:
+    type: noul
+    q: "Does `scene` have a sudden, awkward jump from a crowded area to an empty area?"
+    criteria:
+      true: "Density changes abruptly in a way that breaks the flow"
+      false: "Changes in density feel gradual or clearly deliberate"
+
+  has_rest_area:
+    type: noul
+    q: "Is there an area in `scene` with little detail where the eye can rest?"
+    criteria:
+      true: "Some area is calm enough to give the eye a pause"
+      false: "Detail fills the whole image"

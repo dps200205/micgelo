@@ -1,0 +1,15 @@
+# 项目说明：意图信息由人填写，Jev 不猜意图。未知项留 null。
+purpose: 场景概念图／活动舞台视觉（假设，待确认）
+subject_hint: 左中部的金色士兵雕像
+# 组织目标：hierarchy（有主次）| uniform_pattern（均匀纹样）| minimal（极简）| equal_display（均等展示）| balanced_groups（多组平衡）
+goal: hierarchy
+# 预期主导形式：point | line | area | mixed | null（未指定，只描述不判定）
+dominant_form_target: null
+# 多类平衡目标：none | point_line | point_area | line_area | all_three
+balance_target: none
+view_size: 1920x740
+# 本次评审的维度（条款前缀）
+dimensions: [D, J]
+assumptions:
+  - 用途与主体由 WorkBuddy 根据画面推断，未经作者确认
+  - 未给出标题、按钮等功能区要求

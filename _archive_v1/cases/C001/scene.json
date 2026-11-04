@@ -1,0 +1,24 @@
+{
+  "subject": {"name": "the golden statue of soldiers on the pedestal", "location": "left of center"},
+  "repeated_groups": [
+    {"name": "the tall glowing vertical panels behind the statue", "location": "back wall; tallest behind the statue, shorter toward both sides", "target_read": null},
+    {"name": "the row of dark human silhouettes along the back wall", "location": "back wall, at the far left and across the right two-thirds", "target_read": "one_continuous_path"},
+    {"name": "the large glowing pink letters on the back wall", "location": "back wall, left panels and right half", "target_read": null}
+  ],
+  "guiding_lines": [
+    {"name": "the diagonal spotlight beams", "location": "rising from the stage front toward the top edge"},
+    {"name": "the curved bright edge of the stage floor", "location": "sweeping from below the statue toward the right edge"}
+  ],
+  "large_areas": [
+    {"name": "the dark blue back wall", "location": "upper half"},
+    {"name": "the tiled stage floor", "location": "lower third"},
+    {"name": "the reflective blue area on the right side of the floor", "location": "lower right"}
+  ],
+  "dense_regions": [
+    {"name": "the cluster of soldier figures in the statue", "location": "left of center"}
+  ],
+  "point_groups": [
+    {"name": "the small stage lamps along the front edge of the stage", "location": "a row at the base of the back wall"}
+  ],
+  "parser": "WorkBuddy（按 prompts/scene_parse_prompt.md 人工执行），2026-10-27"
+}

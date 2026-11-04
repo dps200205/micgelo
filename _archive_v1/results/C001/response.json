@@ -1,0 +1,342 @@
+{
+  "model": "jev-1.14.0",
+  "answers": {
+    "abrupt_density_jump": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "area_broken_up__dark_blue_back_wall": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "area_broken_up__tiled_stage_floor": {
+      "type": "noul",
+      "noul": 0.44
+    },
+    "area_broken_up__reflective_blue_area_on_the_right_side_of_the": {
+      "type": "noul",
+      "noul": 0.48
+    },
+    "area_shape_clear__dark_blue_back_wall": {
+      "type": "noul",
+      "noul": 0.37
+    },
+    "area_shape_clear__tiled_stage_floor": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "area_shape_clear__reflective_blue_area_on_the_right_side_of_the": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "busy_area_beats_subject": {
+      "type": "noul",
+      "noul": 0.09
+    },
+    "dense_details_distinct__cluster_of_soldier_figures_in_the_statue": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "distracting_gaps": {
+      "type": "noul",
+      "noul": 0.4
+    },
+    "dominant_form": {
+      "type": "choice",
+      "choice": "long_directional_lines",
+      "confidence": 0.41,
+      "probabilities": {
+        "small_separate_spots": 0.02,
+        "long_directional_lines": 0.56,
+        "large_areas_of_shape": 0.07,
+        "mixed_balance": 0.35
+      }
+    },
+    "first_noticed": {
+      "type": "choice",
+      "choice": "golden_statue_of_soldiers_on_the_pedestal",
+      "confidence": 0.88,
+      "probabilities": {
+        "golden_statue_of_soldiers_on_the_pedestal": 0.89,
+        "tall_glowing_vertical_panels_behind_the_statue": 0.01,
+        "row_of_dark_human_silhouettes_along_the_back": 0.0,
+        "large_glowing_pink_letters_on_the_back_wall": 0.01,
+        "diagonal_spotlight_beams": 0.0,
+        "curved_bright_edge_of_the_stage_floor": 0.09,
+        "dark_blue_back_wall": 0.0,
+        "tiled_stage_floor": 0.0,
+        "reflective_blue_area_on_the_right_side_of_the": 0.0
+      }
+    },
+    "glow_clutter": {
+      "type": "noul",
+      "noul": 0.19
+    },
+    "group_merges_neighbor__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "group_merges_neighbor__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.4
+    },
+    "group_merges_neighbor__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.55
+    },
+    "group_outliers__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.61
+    },
+    "group_outliers__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.48
+    },
+    "group_outliers__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "group_overpowers_subject__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.16
+    },
+    "group_overpowers_subject__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.06
+    },
+    "group_overpowers_subject__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.13
+    },
+    "group_reads_as__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "choice",
+      "choice": "separate_items",
+      "confidence": 0.56,
+      "probabilities": {
+        "separate_items": 0.71,
+        "one_continuous_path": 0.26,
+        "one_filled_area": 0.03
+      }
+    },
+    "group_reads_as__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "choice",
+      "choice": "one_continuous_path",
+      "confidence": 0.35,
+      "probabilities": {
+        "separate_items": 0.43,
+        "one_continuous_path": 0.57,
+        "one_filled_area": 0.0
+      }
+    },
+    "group_reads_as__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "choice",
+      "choice": "separate_items",
+      "confidence": 0.43,
+      "probabilities": {
+        "separate_items": 0.62,
+        "one_continuous_path": 0.33,
+        "one_filled_area": 0.05
+      }
+    },
+    "group_reads_as_one__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "group_reads_as_one__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "group_reads_as_one__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "group_shape_clear__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.68
+    },
+    "group_shape_clear__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.71
+    },
+    "group_shape_clear__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "half_holds_eye__left": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "half_holds_eye__right": {
+      "type": "noul",
+      "noul": 0.6
+    },
+    "has_density_contrast": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "has_rest_area": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "highlights_compete_subject": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "levels_distinct": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "line_contrast__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "line_contrast__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.67
+    },
+    "line_leads_to_subject__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "line_leads_to_subject__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "line_path_continuous__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "line_path_continuous__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "line_reads_as_band__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.1
+    },
+    "line_reads_as_band__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.57
+    },
+    "line_spans_far__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "line_spans_far__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "line_visible_full__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "line_visible_full__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "lopsided": {
+      "type": "noul",
+      "noul": 0.61
+    },
+    "points_equally_loud__small_stage_lamps_along_the_front_edge_of_the": {
+      "type": "noul",
+      "noul": 0.65
+    },
+    "points_pull_from_subject__small_stage_lamps_along_the_front_edge_of_the": {
+      "type": "noul",
+      "noul": 0.13
+    },
+    "shapes_merge": {
+      "type": "noul",
+      "noul": 0.5
+    },
+    "stray_elements": {
+      "type": "noul",
+      "noul": 0.27
+    },
+    "stray_pull_from_subject": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "subject_has_space": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "subject_outline_noisy": {
+      "type": "noul",
+      "noul": 0.09
+    },
+    "subject_outline_readable": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "subject_stands_out": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "thumb_group_visible__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "thumb_group_visible__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "thumb_group_visible__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.69
+    },
+    "thumb_subject_visible": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "present__dark_blue_back_wall": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "present__tiled_stage_floor": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "present__reflective_blue_area_on_the_right_side_of_the": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "present__golden_statue_of_soldiers_on_the_pedestal": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "present__cluster_of_soldier_figures_in_the_statue": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "present__tall_glowing_vertical_panels_behind_the_statue": {
+      "type": "noul",
+      "noul": 0.99
+    },
+    "present__row_of_dark_human_silhouettes_along_the_back": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__large_glowing_pink_letters_on_the_back_wall": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "present__diagonal_spotlight_beams": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "present__curved_bright_edge_of_the_stage_floor": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "present__small_stage_lamps_along_the_front_edge_of_the": {
+      "type": "noul",
+      "noul": 0.96
+    }
+  },
+  "usage": {
+    "input_tokens": 12912,
+    "output_tokens": 2263
+  }
+}

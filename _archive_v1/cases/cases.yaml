@@ -1,0 +1,26 @@
+# 案例登记表
+# - 图片放在 images/，按案例编号命名；一张图可同时作为多条条款的案例
+# - 每个案例目录 <id>/ 下放 brief.yaml（项目说明）和 scene.json（场景解析）
+# - labels 由人工填写，取值：合格 / 需优化 / 不合格 / 不适用；留空表示未标注
+# - split：tune 用于改写问题、调阈值；test 只用于最终测一致率，调参时不要看
+# - pair：修改前后成对的案例编号，没有就留 null
+
+cases:
+  - id: C001
+    file: images/C001.jpg
+    pair: null
+    split: tune
+    labeler: null
+    labels: {}
+    evidence: {}
+    note: 舞台场景截图（金色士兵雕像 + 发光立板 + 剪影），用于跑通流程，尚未人工标注
+
+# 标注示例（复制后修改）：
+#  - id: C002
+#    file: images/C002.jpg
+#    pair: C003
+#    split: test
+#    labeler: 张三
+#    labels: {J01: 合格, J06: 不合格, J10: 需优化, D04: 合格, D14: 不适用}
+#    evidence: {J06: "右上角三个高亮散点与主体抢注意力"}
+#    note: 修改前版本

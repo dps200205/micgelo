@@ -1,0 +1,41 @@
+# 评图管线全局配置
+model: jev-latest
+api: https://api.typesafe.ai/v1/systemone
+
+# Noul 阈值：好的方向概率 >= yes 为合格，<= no 为不合格，中间为“存疑”
+thresholds:
+  pass_at: 0.7
+  fail_at: 0.3
+# 槽位核对：Jev 判定元素存在的概率低于该值时，依赖该元素的检查记为“无法判断”
+gate: 0.7
+
+# 标准原文（给人和大模型看）；条款前缀 -> 文件
+standards:
+  D:
+    name: 点线面
+    file: "D:/知识库文件/评图知识库/01_点线面评测标准.md"
+  J:
+    name: 聚散
+    file: "D:/知识库文件/评图知识库/02_聚散与疏密评测标准.md"
+
+# 问题库文件
+bank:
+  observations: question_bank/observations.yaml
+  clauses: question_bank/clauses.yaml
+
+# 场景解析可提供的槽位（模板只能使用这些）
+slots:
+  single: [subject]
+  lists: [repeated_groups, guiding_lines, large_areas, dense_regions, point_groups]
+
+# 项目说明 dominant_form_target -> dominant_form 选项
+dominant_form_map:
+  point: small_separate_spots
+  line: long_directional_lines
+  area: large_areas_of_shape
+  mixed: mixed_balance
+
+image:
+  max_side: 1568
+  min_side: 280
+  thumb_short_side: 280
